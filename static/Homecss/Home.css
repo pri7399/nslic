@@ -1,0 +1,543 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+{% load static %}
+body{
+margin:0px;
+padding:55px 0px 0px 0px;
+}
+.custom-toggler.navbar-toggler {
+            border-color: lightgreen;
+        }
+
+.navbar {
+  min-height: 25px;
+
+}
+
+.navbar-nav > li{
+  padding-left:35px;
+  padding-right:3px;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
+.footer #oads{
+padding:50px 0px 0px 250px;
+}
+
+.footer #sintro{
+padding:0px 0px 0px 80px;
+}
+
+.footer #sintro h3{
+color:white;
+}
+
+.carousel-inner img {
+     width: 100%;
+
+ }
+
+
+.carousel-item{
+  height:350px;
+
+}
+
+
+/* ********************************************* */
+.img h4{
+font-family:'Permanent Marker', cursive;
+font-size:30px;
+color:blue;
+
+}
+
+.img h1{
+font-size:75px;
+font-family: 'Monoton', cursive;
+
+}
+
+.img h1 span{
+display:table-cell;
+margin:0;
+padding:0;
+animation: animate 2s linear infinite;
+}
+
+
+.img h1 span:nth-child(1)
+{
+    animation-delay:0s;
+}
+.img h1 span:nth-child(2)
+{
+    animation-delay:0.25s;
+}
+.img h1 span:nth-child(3)
+{
+    animation-delay:0.5s;
+}
+.img h1 span:nth-child(4)
+{
+    animation-delay:0.75s;
+}
+.img h1 span:nth-child(5)
+{
+    animation-delay:1s;
+}
+.img h1 span:nth-child(6)
+{
+    animation-delay:1.25s;
+}
+.img h1 span:nth-child(7)
+{
+    animation-delay:1.50s;
+}
+.img h1 span:nth-child(8)
+{
+    animation-delay:1.75s;
+}
+.img h1 span:nth-child(9)
+{
+    animation-delay:2s;
+}
+.img h1 span:nth-child(10)
+{
+    animation-delay:2.25s;
+}
+.img h1 span:nth-child(11)
+{
+    animation-delay:2.5s;
+}
+.img h1 span:nth-child(12)
+{
+    animation-delay:2.75s;
+}
+.img h1 span:nth-child(13)
+{
+    animation-delay:3s;
+}
+.img h1 span:nth-child(14)
+{
+    animation-delay:3.25s;
+}
+.img h1 span:nth-child(15)
+{
+    animation-delay:3.5s;
+}
+.img h1 span:nth-child(16)
+{
+    animation-delay:3.75s;
+}
+.img h1 span:nth-child(17)
+{
+    animation-delay:4s;
+}
+.img h1 span:nth-child(18)
+{
+    animation-delay:4.25s;
+}
+.img h1 span:nth-child(19)
+{
+    animation-delay:4.5s;
+}
+.img h1 span:nth-child(20)
+{
+    animation-delay:4.75s;
+}
+.img h1 span:nth-child(21)
+{
+    animation-delay:5s;
+}
+.img h1 span:nth-child(22)
+{
+    animation-delay:5.25s;
+}
+
+@keyframes animate
+{
+     0%,100%
+     {
+          color:#fff;
+          filter:blur(2px);
+          box-shadow: 0 0 10px #00b3ff
+                      0 0 20px #00b3ff
+                      0 0 40px #00b3ff
+                      0 0 80px #00b3ff
+                      0 0 120px #00b3ff
+                      0 0 200px #00b3ff
+                      0 0 250px #00b3ff
+                      0 0 300px #00b3ff
+                      0 0 350px #00b3ff
+                      0 0 400px #00b3ff
+                      0 0 500px #00b3ff
+                      0 0 600px #00b3ff
+                      0 0 700px #00b3ff
+                      0 0 800px #00b3ff
+                      0 0 900px #00b3ff
+                      0 0 1000px #00b3ff
+                      0 0 1100px #00b3ff
+                      0 0 1200px #00b3ff
+                      0 0 1300px #00b3ff
+                      0 0 1400px #00b3ff
+                      0 0 1500px #00b3ff
+                      0 0 1600px #00b3ff
+                      0 0 1700px #00b3ff
+                      0 0 1800px #00b3ff
+                      0 0 1900px #00b3ff
+                      0 0 2000px #00b3ff
+                      0 0 2100px #00b3ff
+ }
+     5%,95%
+     {
+          color:#111;
+          filter:blur(0px);
+      }
+}
+
+
+#home-heading{
+  position:relative;
+  height: 100px;
+  background: url('lights.jpg');
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+}
+/******************Services*************/
+.ourservices{
+padding: 40px 0px 60px;
+height:650px;
+}
+.ourservices h1{
+font-weight:bold;
+}
+
+.description em {
+  color: red;
+}
+.rowsetting{
+margin:80px 0px;
+}
+
+.imgsetting{
+border-radius:50%;
+height:100px;
+width:100px;
+}
+
+.fa-hourglass-start {
+margin-top:20px;
+}
+.fa-money-bill-alt {
+margin-top:20px;
+}
+.fa-amazon-pay {
+margin-top:20px;
+}
+
+.rowsetting h2{
+margin-top:20px;
+font-weight:bold;
+font-size:30px;
+}
+
+.rowsetting p{
+padding:10px;
+color: #6c757d !important;
+}
+/******************Clients*************/
+
+.clients img{
+
+width:100%;
+border-radius:50%;
+}
+
+.blockquotes p{
+    color: #lebba3
+    margin: 0rem;
+
+}
+
+.clients-hr{
+ border-top: .1rem solid;
+ color:green;
+}
+
+/******************About*************/
+#page-header {
+  height: 100px;
+  background: url('image1.jpg');
+  background-position: 0 -360px;
+  background-attachment: fixed;
+  color: #fff;
+  border-bottom: 1px #eee solid;
+  padding-top: 10px;
+}
+
+#about #info2 img{
+
+height:350px;
+width:350px;
+margin-top:-50px;
+margin-left:100px;
+padding:0;
+border-radius:70%;
+border: 1px solid white;
+box-shadow:0 0 5px 5px grey;
+opacity:0.9;
+}
+
+#info2 h1{
+margin-top:50px;
+margin-left:105px;
+font-weight:bold;
+color:dark;
+font-size:25px;
+font-family: 'Vidaloka', serif;
+word-spacing:1.5px;
+}
+
+#info2 p{
+margin-left:105px;
+color:dark;
+font-family: 'Caveat', cursive;
+}
+
+
+#info1 p{
+color:black;
+margin-left:25px;
+font-size:25px;
+font-family: 'Caveat', cursive;
+word-spacing:2px;
+text-shadow: 0 1px 0 #efefef,
+             0 2px 0 #efefef,
+             0 3px 0 #efefef,
+             0 4px 0 #efefef,
+             0 10px 5px rgba(0,0,0,.5);
+
+}
+
+#info1 h1{
+font-family: 'Kaushan Script', cursive;
+padding:0px 0px 0px 0px;
+font-size:25px;
+color:blacK;
+text-shadow: 0 1px 0 #efefef,
+             0 2px 0 #efefef,
+             0 3px 0 #efefef,
+             0 4px 0 #efefef,
+             0 10px 5px rgba(0,0,0,.5);
+
+opacity:0.8;
+}
+
+#info1 p1{
+color:red;
+margin-left:25px;
+font-size:35px;
+font-family: 'Mr Dafoe', cursive;
+word-spacing:3px;
+text-shadow: 0 1px 0 #efefef,
+             0 2px 0 #efefef,
+             0 3px 0 #efefef,
+             0 4px 0 #efefef,
+             0 10px 5px rgba(0,0,0,.5);
+}
+
+/*================================== MONTH CALENDAR DEFAULT ========================*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+
+.counters {
+	font-family: 'Roboto', sans-serif;
+	background: grey;
+		url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg');
+	color: #fff;
+	/* Push to bottom */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 170px;
+}
+
+.counters .container {
+	max-width: 1100px;
+	margin: 10 auto;
+	overflow: auto;
+  height: 250px;
+}
+
+.counters {
+	background: grey;
+	color: #fff;
+	padding: 5px 5px;
+	border-top: 3px lightskyblue solid;
+}
+
+.counters .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 100px;
+	text-align: center;
+}
+
+.counters i {
+	color: lightskyblue;
+	margin-bottom: 5px;
+}
+
+.counters .counter {
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+	.counters .container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.counters .container > div:nth-of-type(1),
+	.counters .container > div:nth-of-type(2) {
+		border-bottom: 1px lightskyblue solid;
+		padding-bottom: 20px;
+	}
+}
+
+
+
+
+/**media queery---for responsive**/
+@media(min-width:992px){
+}
+@media(min-width:768px) and (max-width:991px){
+}
+@media(min-width:575px) and (max-width:767px){
+}
+@media(min-width:460px) and (max-width:574px){
+
+        .img h1{
+         font-size:40px;
+             }
+        .img h4{
+          font-size:20px;}
+
+          #home-heading h1{
+            padding-top:10px;
+            font-size: 30px;
+          }
+
+          .ourservices{
+              padding: 20px 0px 0px;
+            height:1250px;
+              }
+          .rowsetting p{
+          padding:0px;}
+
+          .rowsetting .al1{
+          padding-top:30px;}
+
+          .rowsetting h2{
+           margin-top:5px;
+            font-weight:bold;
+           font-size:20px;
+           }
+
+           .clients img{
+
+             border-radius:50%;
+             height:150px;
+             width:150px;
+           }
+           .clients .al{
+             padding-top:70px
+           }
+
+           #about #info2 img{
+             height:250px;
+             width:250px;
+
+           margin-top:10px;
+           margin-left:100px;
+            }
+
+            #info2 h1{
+            margin-top:25px;
+            margin-left:25px;
+
+            font-size:25px;
+
+            word-spacing:1.5px;
+            }
+
+            #info2 p{
+            margin-left:25px;
+            color:dark;
+
+            }
+            .counters .container {
+
+            	grid-gap: 5px;
+            	text-align: center;
+            }
+            .counters .counter {
+            	font-size: 15px;
+            	margin: 10px 0;
+            }
+          .footer #sintro{
+            padding:0px 0px 0px 50px;
+            }
+
+          .footer #oads{
+              padding:0px 0px 0px 50px;
+                 }
+
+          .nav-item:hover{
+                          text-color:yellow;
+                          background:white;
+                      }
+
+}
+@media(min-width:412px )and( max-width:459px)
+{
+
+    .img h1{
+         font-size:25px;
+
+     .img h4{
+       font-size:25px;}
+
+     .nav-item:hover{
+              text-color:yellow;
+              background:white;
+          }
+
+
+}
+@media(max-width:411px)
+{
+      .img h1{
+         font-size:24px;}
+      .img h4{
+         font-size:25px;}
+       .nav-item:hover{
+       text-color:yellow;
+        background:white;
+}
+
+}

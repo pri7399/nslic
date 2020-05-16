@@ -1,0 +1,474 @@
+{% load static %}
+
+<html>
+<title>{{ user.profile.pname }} </title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/8083be25ad.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'Usercss/userstyle.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+   <div class="container">
+      <a href="" class="navbar-brand text-warning font-weight-bold">
+         NSLIC </a>
+
+       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+       data-target="#collapsenavbar">
+       <span class="navbar-toggler-icon"> </span>
+        </button>
+     <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+
+     <ul class="navbar-nav ml-auto ">
+               <li class="nav-item"><a class="nav-link text-dark" href="/" >Home</a></li>
+
+               {%if user.is_authenticated%}
+               <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+               <li class="nav-item"><a class="nav-link text-dark" href="Logout">Logout</a></li>
+               {%else%}
+               <li class="nav-item"><a class="nav-link text-dark" href="Login">Login</a></li>
+               {%endif%}
+
+             </ul>
+  </div>
+  </div>
+  </nav>
+  {%if user.is_authenticated%}
+
+    <!-- Pop-up material begins -->
+ <div class="popup" id="upbox">
+   <div class="popup-content">
+     <img src="{% static 'Userimage/close.jpg' %}" alt="close" class="close" />
+     <div class="fas fa-camera-retro fa-2x"</div>
+
+   <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+      {{form.as_p}}
+    <div class="form-group">
+   <button class="btn btn-outline-info" type="submit">Update</button>
+</div>
+    </form>
+
+  </div>
+</div>
+</div>
+
+
+
+
+      <!-- Pop-up material ends -->
+
+
+<br /><br />
+<div class="container">
+<header id="main-header">
+<div class="container">
+        <div class="row no-gutters" >
+               <div class="col-lg-4 col-md-4 bg-info text-danger">
+                <img src="{{ user.profile.ppic.url }}" >
+                <a href="#" class="btn btn-outline-danger" id="button">
+                  Update profile picture</a>
+
+                </div>
+                <div class="col-lg-8 col-md-8">
+                <div class="d-flex flex-column">
+                <div class="p-5 bg-dark text-white">
+                   <div class="d-flex flex-row">
+                       <h1 align="center">{{ user.profile.pname }}</h1>
+
+
+                    </div>
+                </div>
+                </div>
+                <div class="p-3 text-white bg-black">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
+                   <h6> Next Premium Date-</h6>
+                <h4>  {{user.profile.dop}} </h4>
+
+              </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
+                    <h6> Next Premium Amount-</h6>
+                   <h4>  &#x20b9; {{user.profile.npamount}} </h4>
+
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-6 d-block m-auto">
+
+          </div>
+            </div>
+
+
+
+               </div>
+
+               <div class="d-flex flex-row text-center text-white align-items-start">
+
+               <div class="port-item p-4 bg-success font-div" data-toggle="collapse" data-target="#home" >
+               <i class="fa fa-file-text-o fa-2x d-block"></i> Details
+                 </div>
+              <div class="port-item p-4 bg-danger font-div" data-toggle="collapse" data-target="#home1" >
+              <i class="fa fa-history fa-2x d-block"></i> Premium
+                </div>
+             <div class="port-item p-4 bg-Primary font-div" data-toggle="collapse" data-target="#pay" >
+              <i class="fas fa-money-check-alt fa-2x d-block"></i> Pay
+                </div>
+            <div class="port-item p-4 bg-warning font-div" data-toggle="collapse" data-target="#contact">
+              <i class="fas fa-sms fa-2x d-block"></i> Help
+                </div>
+          </div>
+       </div>
+   </div>
+</div>
+</header>
+
+  <!-- Home -->
+<div id="home" class="collapse show">
+  <div class="p-5 text-white bg-success">
+   <h1 align="center">{{user.profile.polnum}}</h1>
+   <h4 align="center">D.O.B-{{user.profile.dob}}</h4>
+
+ </div>
+
+      <div class="card card-body py-5">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-5 d-block m-auto">
+        <h3>  {{user.profile.pstatus}}  </h3>
+        <h6>   Policy status</h6>
+      </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-5 d-block m-auto">
+        <h3>Premium Without Tax</h3>
+        <h6>  &#x20b9; {{user.profile.npamountwt}}</h6>
+      </div>
+    </div>
+
+        </div>
+        <hr>
+  <!-- Animation from youtube start -->
+<div class="box">
+<div class="inner">
+  <span>Better Present</span>
+ </div>
+
+ <div class="inner">
+  <span>Secured Future</span>
+ </div>
+</div>
+<hr />
+<!-- Animation from youtube ends -->
+
+<section class="container ourservices text-center">
+<h1>Policy Term-{{user.profile.prempayterm}}</h1>
+<h6>Total years ,you will be secure under this policy</h6>
+<div class="row rowsetting">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+  <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-calendar-day fa-3x"></i><h2>DATES</h2></div>
+
+<h6>Date of commencement- {{user.profile.doc}}</h6>
+<p class="description">Date when policy was opened</br></p>
+<h6>Date of Maturity- {{user.profile.dom}}</h6>
+<p class="description">Date when policy will complete</br></p>
+</div>
+
+
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+  <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-people-carry fa-3x"></i><h2>NOMINEE</h2></div>
+
+<p>The person who will be beneficiary in your absence</p>
+
+<h5>Name- {{user.profile.nname}}<br />
+  Relation-{{user.profile.nrel}} <br />
+  Shares- {{user.profile.nshare}}
+  </h5>
+  </div>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+  <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-luggage-cart fa-3x"></i><h2>PLAN</h2></div>
+<h4>{{user.profile.plan}}</h4>
+
+<p>Sum Assured- &#x20b9; {{user.profile.sum}}<br /><br />
+  Mode- {{user.profile.mode}} <br />
+  Type-{{user.profile.plantype}}
+</p>
+</div>
+
+
+
+</div>
+</section>
+<div class="jumbotron">
+  <div class="col-12 text-center">
+    <h2 class="heading">LOAN </h2>
+
+  </div>
+
+  <h4>You Can get a maximum loan of {{user.profile.maxloan}} on this policy.</h4>
+
+  In case of ENDOWMENT type policy, Life Insurance Corporation of India (LIC) also provides secured personal loans using its life insurance policies
+  as collateral.The essential condtion is that applicant should
+  have paid at least 3 years of insurance premium in full.You can repay the loan with interest or continue paying the interest and allow
+  the loan to be deducted at the time of the claim payments.Loan against insurance policy requires the borrower to submit the insurance policy with the lender as collateral. If the borrower is
+  unable to pay back the loan, then the lender reserves the right to hold on to the policy till the debt is cleared by the borrower.
+  you are required to visit the nearby LIC office and fill out the loan application forms along with applicable KYC documents and submit those along
+  with the original policy document.Once the details of the application are verified, a loan amount of up to 90% of the surrender value of the policy
+  is paid out. In case your policy is eligible for loan, then contact us, you will make all arrangements for you to get the loan.
+</div>
+
+
+<hr />
+<div class="col-12 text-center">
+  <h2 class="heading">Your Bond Papers</h2>
+
+</div>
+<div class="row">
+  <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto">
+    <img src="{{ user.profile.bpic.url }}" height="600px" width="600px"/>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-12 d-block m-auto">
+<p>
+   If it is not your bond paper then please update it here, otherwise ignore this text.
+</p>
+<a href="upload" class="btn btn-outline-danger">
+  Update Bond picture</a>
+
+
+</div>
+
+<hr />
+</div>
+<hr />
+</div
+
+    <!-- Premium Paid -->
+    <div id="home1" class="collapse">
+      <div class="card card-body bg-danger text-white py-5">
+        <h2>Premium Paying Term</h2>
+        <h4 >{{user.profile.prempayterm}} years</h4>
+      </div>
+
+      <div class="card card-body py-5">
+        <h3>Installment Premium Amount</h3>
+        <p>&#x20b9; {{user.profile.npamount}}/- </p>
+        <br /><br />
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Total Premium Paid</h4>
+              <p class="card-text">Total money that has been paid by you till today</p>
+              <p class="p-2 mb-3 bg-dark text-white">
+                Amount: &#x20b9; {{user.profile.ptotal}}.00
+              </p>
+              <p class="p-2 mb-3 bg-dark text-white">
+              Late fee: &#x20b9; 0.00<br />
+
+              </p>
+              Pay premiums on time to avoid late fee
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Surrender Value</h4>
+              <p class="card-text">Money which is payable to you when you decide to discontinue the policy</p>
+              <p class="p-2 mb-3 bg-dark text-white">
+                Amount: &#x20b9; {{user.profile.svalue}}.00
+              <p >
+                Surrender value is payable only after three full years premiums are paid to LIC
+                Surrender of policy is not recommended.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Maturity Value</h4>
+              <p class="card-text">Money that you will receive if you pay premiums regularly for full term</p>
+              <p class="p-2 mb-3 bg-dark text-white">
+                Bonus: &#x20b9; {{user.profile.mbonus}}.00
+              </p>
+              <p class="p-2 mb-3 bg-dark text-white">
+               Total Amount: &#x20b9; {{user.profile.mvalue}}.00
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PAY ONLINE -->
+    <div id="pay" class="collapse">
+      <div class="card card-body bg-primary text-white py-5">
+        <h2>PAY ONLINE </h2>
+        <p class="lead">We will be using "licindia" website as third party for online payment. Follow these simple steps to pay your premium online easily.</p>
+      </div>
+      <div class="card card-body py-5">
+        <h3> &nbsp &nbsp &nbsp Follow These Steps</h3>
+
+        <hr>
+        <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 1</h5>
+        <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Go to <a class="link text-white bg-dark " href="https://ebiz.licindia.in/D2CPM/#DirectPay">Pay Online</a> page and select the type of payment you want to make.</p>
+<br /><br />
+        <img src="{% static 'Userimage/pay1.jpg' %}"><br /><br />
+        <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Let you want to pay your renewal, then select "Reanewal Premium / Revival"</p><br /><br />
+          <img src="{% static 'Userimage/pay2.jpg' %}">
+          <br /><br />
+          <hr>
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 2</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Click on Proceed.</p><br /><br />
+          <img src="{% static 'Userimage/pay3.jpg' %}">
+          <br /><br />
+          <hr>
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 3</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Fill your detail's carefully, Look in your
+            profile page of our website for all the details.Premium without tax is written seprately on profile page for this purpose only.</p><br /><br />
+          <img src="{% static 'Userimage/pay4.jpg' %}">
+          <br /><br />
+
+       </div>
+    </div>
+
+    <!-- CONTACT -->
+      <div id="contact" class="collapse">
+        <div class="card card-body bg-warning text-white py-5">
+          <h2>Contact</h2>
+          <strong class="footertext">NSLIC</strong>
+                       <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> Agent-LIC of India,</strong></p>
+           <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+
+
+
+        </div>
+
+        <div class="card card-body py-5">
+          <h1>Get In Touch</h1>
+          <p>Didn't found the right details or want to ask something </p>
+          <form>
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-danger text-white">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control bg-dark text-white" placeholder="Name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-danger text-white">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                <input type="number" class="form-control bg-dark text-white" placeholder="Policy Number">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-danger text-white">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                </div>
+                <textarea class="form-control bg-dark text-white" placeholder="Wrtie your message"></textarea>
+              </div>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-danger btn-block btn-lg">
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+
+<div class="p-5 bg-info footer">
+        <div class="container">
+	       <div class="row">
+		<div class="col-ms-6 " id="sintro">
+			<h3><strong>Contact Us</strong></h3>
+      <br />
+		        <strong class="footertext">NSLIC</strong>
+                        <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> Agent-LIC of India,</strong></p>
+		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+
+                        <p><strong>EMAIL  ID:-</strong><br>
+			<a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
+                        </p>
+                   </div>
+
+                   <div class="col-ms-6" id="oads">
+                      <br>
+                        <h4><strong>Aurangabad Branch Office</strong></h4>
+                        <p>Chandel Niwas,Maharajganj Road<br>
+                        Aurangabad Bihar-824101</p>
+                        <p>Contact-1800-33-4433</p>
+                   </div>
+</div>
+<div class="copyright">
+<div class="footer-bottom">
+		<div class="container">
+			<div class="col-xs-12 bg-dark text-white">
+				<center><p>All Rights Reserved &#169; 2019  www.nslic.in</p></center>
+			</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+{%else%}
+<br />
+<br />
+<br />
+<div  class="container">
+  <div class="card card-body bg-white text-dark py-5">
+    <h2>You are logged out, Please Log-in to See deatils </h2>
+
+  </div>
+</div>
+  {%endif%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+      $('.port-item').click(function () {
+        $('.collapse').collapse('hide');
+      });
+
+      $(document).on('click', '[data-toggle="lightbox"]', function (e) {
+        e.preventDefault();
+        $(this).ekkoLightbox();
+      });
+    </script>
+    <script>
+    document.getElementById("button").addEventListener("click", function(){
+      document.querySelector(".popup").style.display = "flex";
+    })
+
+    document.querySelector(".close").addEventListener("click", function(){
+      document.querySelector(".popup").style.display="none";
+    })
+
+
+    </script>
+
+
+
+</body>
+</html>

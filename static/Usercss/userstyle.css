@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+
+
+.navbar {
+  min-height: 40px;
+}
+
+.navbar-nav > li{
+  padding-left:80px;
+  padding-right:3px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.header-title h2{
+font-size:40px;}
+
+.footer #oads{
+padding:0px 0px 0px 150px;
+}
+
+.footer #sintro{
+padding:0px 0px 0px 80px;
+
+}
+/**pop-up css**/
+#upbox{
+  background: rgba(0, 0, 0, 0.6);
+  width:200px;
+  height:180px;
+  position:absolute;
+  margin-top:110px;
+  margin-left:20px;
+  font-size:7px;
+
+  display: none;
+  justify-content:center;
+  align-items: center;
+  text-align:center;
+}
+#upbox .pop-content{
+  height:250px;
+  width:500px;
+  padding:20px;
+  border-radius: 5px;
+  position: relative;
+}
+#upbox .close{
+
+  top:-15px;
+  left:-5px;
+  background: #fff;
+  height:10px;
+  width:10px;
+  border-radius:50%;
+  box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+  cursor: pointer
+}
+
+
+/*-----Animated Marquee css begins-----*/
+
+.box{
+ display:flex;
+}
+.inner{
+ width:450px;
+ height:80px;
+ line-height:80px;
+ font-size:3em;
+ font-weight:800;
+ white-space:nowrap;
+ overflow:hidden;
+ box-shadow:4px 6px 8px rgba(0,0,0,0.5);
+}
+.inner:first-child{
+ background:indianred;
+ color:#f1f1f1f1;
+ transform-origin:right;
+ transform:perspective(100px)rotateY(-15deg);
+}
+.inner:last-child{
+ background:lightcoral;
+ color:#ff0;
+ transform-origin:left;
+ transform:perspective(100px)rotateY(15deg);
+}
+.inner span{
+ position:absolute;
+ animation:marquee 4s linear infinite;
+}
+.inner:first-child span{
+ animation-delay:2.5s;
+ left:-100%;
+}
+@keyframes marquee{
+ from{
+  left:100%;
+ }
+ to{
+  left:-100%;
+ }
+}
+
+/*-----Animated Marquee css ends-----*/
+
+#main-header {
+  width: 1125px;
+
+}
+
+
+/**Header and footer **/
+
+
+#box{
+margin-top:25px;
+}
+#box1{
+height:70px;
+}
+#box2 h3{
+color:white;
+font-family: 'Oswald', sans-serif;
+}
+
+.bg-black{
+background-color:black;}
+
+#main-header img{
+width:100%;
+height:310px;
+
+}
+#main-header a{
+  padding-top: -30px;
+  postion: center;
+}
+.font-div{
+width:30%;
+}
+#main-header .port-item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media only screen and(min-width: 1198px)
+{
+        .font-div{
+                padding: 50px 0px!important;
+        }
+}
+
+
+.container .p{
+float:left;}
+
+.container .d{
+float:right;}
+.ourservices{
+padding: 10px 0px 60px;
+height:650px;
+}
+.ourservices h1{
+font-weight:bold;
+}
+
+.description em {
+  color: red;
+}
+.rowsetting{
+margin:80px 0px;
+}
+.fa-calendar-day {
+margin-top:20px;
+}
+.fa-luggage-cart {
+margin-top:20px;
+}
+.fa-people-carry{
+margin-top:20px;
+}
+
+
+
+.rowsetting h2{
+margin-top:20px;
+font-weight:bold;
+font-size:30px;
+}
+
+.rowsetting p{
+padding:10px;
+color: #6c757d !important;
+}
+
+
+
+/**media queery---for responsive**/
+@media(min-width:992px){
+}
+@media(min-width:768px) {
+	.box{
+	 display:flex;
+	}
+	.inner{
+	 width:500px;
+	 height:150px;
+	 line-height:150px;
+	 font-size:6em;
+	 font-weight:800;
+	 white-space:nowrap;
+	 overflow:hidden;
+	 box-shadow:4px 6px 8px rgba(0,0,0,0.5);
+	}
+	.inner:first-child{
+	 background:indianred;
+	 color:#f1f1f1f1;
+	 transform-origin:right;
+	 transform:perspective(100px)rotateY(-15deg);
+	}
+	.inner:last-child{
+	 background:lightcoral;
+	 color:#ff0;
+	 transform-origin:left;
+	 transform:perspective(100px)rotateY(15deg);
+	}
+	.inner span{
+	 position:absolute;
+	 animation:marquee 6s linear infinite;
+	}
+	.inner:first-child span{
+	 animation-delay:3.5s;
+	 left:-100%;
+	}
+	@keyframes marquee{
+	 from{
+	  left:100%;
+	 }
+	 to{
+	  left:-100%;
+	 }
+	}
+
+}
+@media (max-width: 768px)
+{
+  .port-item {
+    height:110px;
+  }
+  #main-header {
+    width: 467px;
+  }
+
+	#home .ourservices{
+			 padding: 60px 0px 10px;
+		 height:1000px;
+			 }
+	 #home .rowsetting p{
+	 padding:0px;}
+
+	 #home .rowsetting h2{
+		margin-top:5px;
+		 font-weight:bold;
+		font-size:20px;
+		}
+		#home .rowsetting{
+		margin:50px 0px;
+		}
+
+	 #home .footer #oads{
+			 padding:0px 0px 0px 80px;
+					}
+}
+
+@media(min-width:460px) and (max-width:574px){
+
+
+
+
+
+	#home .ourservices{
+			 padding: 60px 0px 10px;
+		 height:1000px;
+			 }
+	 #home .rowsetting p{
+	 padding:0px;}
+
+	 #home .rowsetting h2{
+		margin-top:5px;
+		 font-weight:bold;
+		font-size:20px;
+		}
+		#home .rowsetting{
+		margin:50px 0px;
+		}
+
+	 #home .footer #oads{
+			 padding:0px 0px 0px 80px;
+					}
+}
+
+
+
+
+
+
+
+
+}

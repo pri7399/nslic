@@ -1,0 +1,415 @@
+{% load static %}
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="{% static 'Homecss/Home.css' %}">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+   <div class="container">
+      <a href="" class="navbar-brand text-warning font-weight-bold">
+         NSLIC </a>
+
+       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+       data-target="#collapsenavbar">
+       <span class="navbar-toggler-icon"> </span>
+        </button>
+     <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+
+     <ul class="navbar-nav ml-auto ">
+               <li class="nav-item"><a class="nav-link text-dark" href="" >Home</a></li>
+               <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
+                href="" id="navbardrop" data-toggle="dropdown">Plans</a>
+                <div class="dropdown-menu bg-dark">
+                <a class="dropdown-item text-warning" href=../Plan/EndowmentPlan/endplans.html>Endowment Plans</a>
+                <a class="dropdown-item text-warning" href=../Plan/MoneyBack/MoneyBack.html>Money Back Plans</a>
+                <a class="dropdown-item text-warning" href=../Plan/TermPlan/Term.html>Term Plans</a>
+                <a class="dropdown-item text-warning" href=../Plan/Pensionplan/Pension.html>Pension Plans</a>
+                <a class="dropdown-item text-warning" href=../Plan/HealthPlan/Health.html>Health Plans</a>
+                <a class="dropdown-item text-warning" href=../Plan/ChildPlan/Child.html>Child Plans</a>
+</div>
+
+
+</li>
+
+<li class="nav-item"><a class="nav-link text-dark" href="">FAQ</a></li>
+<li class="nav-item"><a class="nav-link text-dark" href="">Contact Us</a></li>
+<li class="nav-item"><a class="nav-link text-white bg-dark" href="Login">Login Portal</a></li>
+
+             </ul>
+</div>
+</div>
+</nav>
+<!-- SHOWCASE SLIDER-->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
+    <li data-target="#demo" data-slide-to="5"></li>
+  </ul>
+
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'Homeimage/cu4.jpg' %}" alt="Los Angeles" width="1100" height="350">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'Homeimage/cu5.png' %}" alt="Chicago" width="1100" height="350">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'Homeimage/cu3.jpg' %}" alt="New York" width="1100" height="350">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'Homeimage/cu1.jpg' %}" alt="ye gaya" width="1100" height="350">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'Homeimage/cu2.jpg' %}" alt="ye gaya" width="1100" height="350">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'Homeimage/cu6.jpg' %}" alt="ye gaya" width="1100" height="350">
+    </div>
+  </div>
+
+
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<br />
+
+<!-- Welcome speech-->
+<div class="img">
+
+   <center><h1 >
+                 <span>W</span>
+                 <span>e</span>
+                 <span>l</span>
+                 <span>c</span>
+                 <span>o</span>
+                 <span>m</span>
+                 <span>e</span>
+                 <span>- </span>
+                 <span>T</span>
+                 <span>o</span>
+                 <span> - </span>
+                 <span>N</span>
+                 <span>S</span>
+                 <span>L</span>
+                 <span>I</span>
+                 <span>C</span>
+
+
+           </h1>
+
+
+
+<marquee><h4> Zindagi ke saath bi - Zindagi ke baad bi</h4></marquee>
+
+
+</div>
+<br />
+<!-- Home heading section-->
+<section id="home-heading" class="p-1">
+
+  <div class="dark-overlay">
+    <div class="row">
+      <div class="col">
+         <h1> Are You Ready To Get Started?</h1>
+        <a href="#"><button class="btn btn-warning text-white btn-sm">User Guide</button></a>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<!-- Services-->
+
+<section class="container ourservices text-center">
+<h1>SERVICES</h1>
+<h4>Can be used from login portal</h4>
+<div class="row rowsetting">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto ">
+  <div class="imgsetting d-block m-auto bg-warning text-white"><i class="fa fa-hourglass-start fa-3x">
+</i></div>
+<h2>Revival</h2>
+<p class="description">When a policy gets lapsed if the premium is not paid within the grace period<b>(Minimum 1 month if mode of payment is Yearly or Half-yearly or Qly and 15days if the mode is monthly)</b>.It can be revived any time within 5 years from the date of first unpaid premium.
+Revive the policy as soon as possible to avoid high late fines.
+
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto al1">
+  <div class="imgsetting d-block m-auto bg-warning text-white"><i class="far fa-money-bill-alt fa-3x"></i></div>
+<h2>Loan</h2>
+<p>In case of ENDOWMENT type policy, you would be allowed to raise a loan against your policy.<b>The essential condtion is that applicant should have paid at least 3 years of insurance premium in full.</b>You can repay the loan with interest or continue paying the interest and allow the loan to be deducted at the time of the claim payments.</p>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto al1">
+  <div class="imgsetting d-block m-auto bg-warning text-white"><i class="fab fa-amazon-pay fa-3x">
+</i></div>
+<h2>Pay Online</h2>
+<p>You can pay your premiums online by using Credit/Debit Card or Net Banking or UPI Services(like- Phonepay, GooglePay ,Paytm etc).
+  You will get an elctronic receipt , that you should keep as soft copy or hard copy for future use. You will have to send that receipt to our e-mail for confirmation.
+  Use this only when you have good internet signals.
+</p>
+</div>
+
+
+
+</div>
+</section>
+
+
+<!-- CLIENT SECTION-->
+<div id="clients" class="offsets">
+<!-- start jumbotron-->
+<div class="jumbotron">
+  <div class="col-12 text-center">
+    <h2 class="heading">BELOVED CUSTOMERS</h2>
+    <h5>
+        "Our's family"
+    </h5>
+    <div class="heading-underline"></div>
+  </div>
+  <br /><br /><br />
+  <div class="row">
+
+    <div class="col-md-4 clients">
+      <div class="row ">
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Homeimage/pf3.jpg' %}" />
+        </div>
+        <div class="col-md-8">
+          <blockquotes class="blackquotes">
+            <i class="fas fa-quote-left"></i>
+
+            <p>
+            Great agent! Provides very good service ,submits my premiums on time and provide instantly any kind of help if needed.
+            If you are thinking to open an lic policy, I would highly recommend
+            Narendra Kumar Singh.</p>
+            <hr class="clients-hr" />
+            <b><cite>&#8212; Jagmohan , Business Owner</cite></b>
+          </blockquotes>
+        </div>
+       </div>
+    </div>
+
+    <div class="col-md-4 clients">
+      <div class="row al">
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Homeimage/pf5.png' %}" />
+        </div>
+        <div class="col-md-8">
+          <blockquotes>
+            <i class="fas fa-quote-left"></i>
+          <p>I have taken my life insurance from LIC because its Government based company.
+            Whatever the commitment they are making to the customer, they are keeping the same.I would highly recommend
+          to take a LIC policy from NSLIC. </p>
+            <hr class="clients-hr" />
+          <b><cite>&#8212; Surendra , Farmer</cite></b>
+          </blockquotes>
+        </div>
+       </div>
+    </div>
+
+    <div class="col-md-4 clients">
+      <div class="row al" >
+        <div class="col-md-4 text-center">
+          <img src="{% static 'Homeimage/pf2.jpg' %}" />
+        </div>
+        <div class="col-md-8">
+          <blockquotes>
+            <i class="fas fa-quote-left"></i>
+            <p>
+            My child's future is secure with lic child plan. The policy covers all the expenditures like Education,
+            medical emergency, health issues etc.It was suggested to me by NSLIC, I would highly recommend
+            to consult NSLIC.</p>
+            <hr class="clients-hr" />
+            <b><cite>&#8212; Reetu , Teacher</cite></b>
+          </blockquotes>
+        </div>
+       </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- end jumbotron-->
+
+</div>
+<!-- CLIENT SECTION ENDS-->
+
+<!-- About Section-->
+
+<!-- PAGE HEADER -->
+<header id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center">
+        <h1>About</h1>
+        <p>Secured future , Better present.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="info1">
+        <h1>Dear guests,Hello!</h1>
+      <p>I believe that Insurance is not merely an investment to save taxes. It's a lot more!
+         Whether it's about the Financial security for your family or having that
+         protection cover when life brings up unpleasant surprises or even taking care
+         of the educational needs of your loved ones .There's nothing that can beat
+         Insurance. Unlike other avenues, Insurance gives you the much needed all
+         round protection throughout life. We are inviting you to fully explore our website,
+         This website is fully devoted for helping you to learn about your policy.
+         We are simply here to protect you & your Investment made to us.</p>
+      </div>
+      <div class="col-md-6" id="info2">
+        <img src="{% static 'Homeimage/dp.jpeg' %}" alt="">
+        <h1>NARENDRA KUMAR SINGH</h1>
+          <p>Life Insurance Advisor<br>CM Club Member<br>
+           In service for more then 16 years</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- counter-->
+<section class="counters">
+			<div class="container">
+        <div>
+        <i class="fas fa-street-view fa-2x"></i>
+          <div class="counter" data-target="3234">0</div>
+          <h3>Connections</h3>
+        </div>
+
+				<div>
+					<i class="fas fa-user-shield fa-2x"></i>
+					<div class="counter" data-target="1345">0</div>
+					<h3>Policy Holders</h3>
+				</div>
+        <div>
+
+
+      <i class="fas fa-smile fa-2x"></i>
+        <div class="counter" data-target="323">0</div>
+        <h3>Maturity</h3>
+      </div>
+				<div>
+				<i class="fas fa-hospital-user fa-2x"></i>
+					<div class="counter" data-target="125">0</div>
+					<h3>Claims</h3>
+				</div>
+
+			</div>
+		</section>
+
+  <script>
+   const counters = document.querySelectorAll('.counter');
+    const speed = 200; // The lower the slower
+
+    counters.forEach(counter => {
+    	const updateCount = () => {
+    		const target = +counter.getAttribute('data-target');
+    		const count = +counter.innerText;
+
+    		// Lower inc to slow and higher to slow
+    		const inc = target / speed;
+
+    		// console.log(inc);
+    		// console.log(count);
+
+    		// Check if target is reached
+    		if (count < target) {
+    			// Add inc to count and output in counter
+    			counter.innerText = count + inc;
+    			// Call function every ms
+    			setTimeout(updateCount, 1);
+    		} else {
+    			counter.innerText = target;
+    		}
+    	};
+
+    	updateCount();
+    });
+
+
+
+</script>
+
+
+<!-- Footer-->
+<div class="p-5 bg-info footer">
+        <div class="container">
+	       <div class="row">
+		<div class="col-ms-6 " id="sintro">
+			<h3><strong>Contact</strong></h3>
+      <br />
+		        <strong class="footertext">NSLIC</strong>
+                        <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> LIC India,</strong></p>
+		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+
+                        <p><strong>EMAIL  ID:-</strong><br>
+			<a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
+                        </p>
+                   </div>
+
+                   <div class="col-ms-6" id="oads">
+                      <br>
+                        <h4><strong>Aurangabad Branch Office</strong></h4>
+                        <p>Chandel Niwas,Maharajganj Road<br>
+                        Aurangabad-824101</p>
+                        <p>Contact-1800-33-4433</p>
+                   </div>
+</div>
+<div class="copyright">
+<div class="footer-bottom">
+		<div class="container">
+			<div class="col-xs-12 bg-dark text-white">
+				<center><p>All Rights Reserved &#169; 2019  www.nslic.in</p></center>
+			</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+<section class="developer">
+<div class="container text-center">
+<h1>WEB DEVELOPER</h1>
+
+   <div class="d-block m-auto">
+   <figure class="figure">
+   <a href="https://www.linkedin.com/in/prince-singh-122b51186/"><img src="{% static 'Homeimage/p.jpg' %}" class="figure-img img-filled rounded-circle" height="250px" width="250px"></a>
+   <figcaption>
+      <h4>Prince Singh</h4><b><p class="figure-caption">B.Tech-NIT Surathkal</p></b>
+
+    </figcaption>
+    </figure>
+  </div>
+
+</div>
+</section>
+
+</body>
+</html>

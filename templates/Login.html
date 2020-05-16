@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'Logcss/style.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+ <div class="container">
+		<a class="navbar-brand text-warning font-weight-bold ">
+			 NSLIC </a>
+
+		 <button class="navbar-toggler" type="button" data-toggle="collapse"
+		 data-target="#collapsenavbar">
+		 <span class="navbar-toggler-icon"> </span>
+			</button>
+	 <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+
+	 <ul class="navbar-nav ml-auto text-center">
+						 <li class="nav-item"><a class="nav-link text-dark" href="/">HOME</a></li>
+						 <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
+							href="" id="navbardrop" data-toggle="dropdown">PLANS</a>
+					<div class="dropdown-menu bg-dark ">
+							<a class="dropdown-item text-warning" href="#">Endowment Plans</a>
+							<a class="dropdown-item text-warning" href="#">Money Back Plans</a>
+							<a class="dropdown-item text-warning" href="#">Term Plans</a>
+							<a class="dropdown-item text-warning" href="#">Pension Plans</a>
+							<a class="dropdown-item text-warning" href="#">Health Plans</a>
+							<a class="dropdown-item text-warning" href="#">Child Plans</a>
+					</div></li>
+
+
+						<li class="nav-item"><a class="nav-link text-dark" href="">FAQ</a></li>
+						 <li class="nav-item"><a class="nav-link text-dark" href="">CONTACT US</a></li>
+            
+					 </ul>
+</div>
+</div>
+</nav>
+
+<!--Login page -->
+<sectio class="lox">
+<img class="wave" src="{% static 'Logimg/wave.png' %}">
+	<div class="container">
+		<div class="img">
+			<img src="{% static 'Logimg/bg.svg' %}">
+		</div>
+		<div class="login-content">
+
+			<form  method="POST">
+				{% csrf_token %}
+				<img src="{% static 'Logimg/avatar.svg' %}">
+				<h2 class="title">LOGIN</h2>
+				{%for message in messages %}
+				<h5 class=" text-danger ">{{ message }}</h5>
+				{% endfor %}
+				<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" name="username" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" name="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+
+            	<input type="submit" class="btn text-white" value="Login">
+            </form>
+        </div>
+    </div>
+	</section>
+
+    <script type="text/javascript" src="{% static 'Logjs/main.js' %}"></script>
+</body>
+</html>
