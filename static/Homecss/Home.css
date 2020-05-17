@@ -12,9 +12,7 @@ body{
 margin:0px;
 padding:55px 0px 0px 0px;
 }
-.custom-toggler.navbar-toggler {
-            border-color: lightgreen;
-        }
+
 
 .navbar {
   min-height: 25px;
@@ -45,8 +43,6 @@ color:white;
      width: 100%;
 
  }
-
-
 .carousel-item{
   height:350px;
 
@@ -358,7 +354,7 @@ text-shadow: 0 1px 0 #efefef,
              0 10px 5px rgba(0,0,0,.5);
 }
 
-/*================================== MONTH CALENDAR DEFAULT ========================*/
+/*================================== Counter Css ========================*/
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
@@ -407,7 +403,7 @@ text-shadow: 0 1px 0 #efefef,
 	margin: 10px 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
 	.counters .container {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -423,121 +419,218 @@ text-shadow: 0 1px 0 #efefef,
 
 
 /**media queery---for responsive**/
-@media(min-width:992px){
+@media(max-width:991px){
+.navbar {
+    min-height:90px;
 }
-@media(min-width:768px) and (max-width:991px){
+.navbar .navbar-brand{
+  font-size:70px;
 }
-@media(min-width:575px) and (max-width:767px){
-}
-@media(min-width:460px) and (max-width:574px){
+.navbar-toggler .navbar-toggler-icon{
+    width: 100px;
+    height: 80px;
+  }
+  .navbar-toggler {
+       width: 120px;
+      height: 100px;
+    }
+.navbar-nav > li > a {
+    line-height: 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  font-size: 50px;}
+.carousel-inner img {
+       width: 100%;
+       height:1100px;
+       margin-top:70px;
+     }
+  .carousel-item{
+    height:1100px;
 
-        .img h1{
-         font-size:40px;
-             }
-        .img h4{
-          font-size:20px;}
+  }
+  .img h1{
+    padding-top: 50px;
+    padding-bottom: 20px;
+         font-size:85px;
+      }
+  .img h4{
+    font-size:55px;
+    padding-bottom: 50px;}
+  #home-heading{
+      position:relative;
+      height: 240px;
+      background: url('lights.jpg');
+      background-attachment:=local;
+      text-align: center;
+      color: #fff;
+    }
+    #home-heading h1{
+      font-size:65px;
+      padding-top: 30px;
+    }
+    #home-heading .btn{
+      font-size:40px;
+      margin-top:20px;
+}
 
-          #home-heading h1{
-            padding-top:10px;
+.ourservices{
+      padding: 60px 0px 0px;
+      height:3250px;
+      }
+.ourservices h1{
+  font-size:80px;
+}
+.ourservices h4{
+  font-size:35px;
+}
+
+.rowsetting p{
+          padding:0px;
+          font-size:35px;
+        }
+.imgsetting{
+
+        height:250px;
+        width:250px;
+        }
+  .fa-hourglass-start {
+        margin-top:50px;
+        font-size: 150px;
+        }
+  .fa-money-bill-alt {
+          margin-top:50px;
+          font-size: 150px;
+        }
+    .fa-amazon-pay {
+          margin-top:50px;
+          font-size: 150px;
+        }
+
+  .rowsetting h2{
+        margin-top:20px;
+        font-size:55px;
+
+    }
+    .rowsetting .al1{
+    padding-top:90px;}
+
+    #clients img{
+
+      border-radius:60%;
+      height:350px;
+      width:350px;
+    }
+    #clients h2{
+      font-size:80px;
+    }
+    #clients h5{
+      font-size:50px;
+    }
+    #clients p{
+      font-size:40px;
+    }
+    #clients b{
+      font-size:50px;
+    }
+    #clients .pd{
+      padding-top: 100px;
+    }
+    #clients .bt{
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+    #page-header h1{
+      font-size:80px;
+    }
+    #page-header p{
+      font-size:40px;
+    }
+    #page-header {
+      height: 200px;
+
+  }
+  #about #info2 img{
+             height:650px;
+             width:650px;
+
+           margin-top:10px;
+           margin-left:50px;
+            }
+#about #info1 h1{
+  font-size:60px;
+}
+#about #info1 p{
+  font-size:60px;
+}
+#info2 h1{
+font-size:50px;
+word-spacing:0.5px;
+margin-left:5px;
+    }
+  #info2 p{
+    margin-left:5px;
+    font-size:40px;
+}
+
+.counters {
+  height: 325px;
+}
+.counters .counter {
+            	font-size: 50px;
+            	margin: 10px 0;
+    }
+    .counters .counter h3{
+                	font-size: 150px;
+                }
+    .counters .fa-street-view {
+    	font-size:80px;
+    }
+    .counters .fa-user-shield {
+    	font-size:80px;
+    }
+
+
+
+
+
+          .footer #sintro h3{
+            font-size:80px;
+            }
+            .footer #sintro p{
+              font-size:35px;
+              }
+              .footer #sintro .nam{
+                font-size:65px;
+                }
+
+              .footer #oads h4{
+                  font-size:35px;
+                  }
+                  .footer #oads p{
+                    font-size:35px;
+                    }
+
+
+          .footer #oads{
+              padding:0px 0px 0px 70px;
+                 }
+          .footer .copyright p{
             font-size: 30px;
           }
 
-          .ourservices{
-              padding: 20px 0px 0px;
-            height:1250px;
-              }
-          .rowsetting p{
-          padding:0px;}
 
-          .rowsetting .al1{
-          padding-top:30px;}
-
-          .rowsetting h2{
-           margin-top:5px;
-            font-weight:bold;
-           font-size:20px;
-           }
-
-           .clients img{
-
-             border-radius:50%;
-             height:150px;
-             width:150px;
-           }
-           .clients .al{
-             padding-top:70px
-           }
-
-           #about #info2 img{
-             height:250px;
-             width:250px;
-
-           margin-top:10px;
-           margin-left:100px;
-            }
-
-            #info2 h1{
-            margin-top:25px;
-            margin-left:25px;
-
-            font-size:25px;
-
-            word-spacing:1.5px;
-            }
-
-            #info2 p{
-            margin-left:25px;
-            color:dark;
-
-            }
-            .counters .container {
-
-            	grid-gap: 5px;
-            	text-align: center;
-            }
-            .counters .counter {
-            	font-size: 15px;
-            	margin: 10px 0;
-            }
-          .footer #sintro{
-            padding:0px 0px 0px 50px;
-            }
-
-          .footer #oads{
-              padding:0px 0px 0px 50px;
-                 }
-
-          .nav-item:hover{
-                          text-color:yellow;
-                          background:white;
-                      }
-
-}
-@media(min-width:412px )and( max-width:459px)
-{
-
-    .img h1{
-         font-size:25px;
-
-     .img h4{
-       font-size:25px;}
-
-     .nav-item:hover{
-              text-color:yellow;
-              background:white;
+  .developer h1{
+        font-size:50px;
+      }
+  .developer h4{
+            font-size:50px;
           }
+  .developer p{
+                font-size:30px;
+              }
 
 
-}
-@media(max-width:411px)
-{
-      .img h1{
-         font-size:24px;}
-      .img h4{
-         font-size:25px;}
-       .nav-item:hover{
-       text-color:yellow;
-        background:white;
-}
+
+
 
 }
