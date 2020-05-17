@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
    <div class="container">
       <a href="" class="navbar-brand text-warning font-weight-bold">
          NSLIC </a>
@@ -130,7 +130,7 @@
     <div class="row">
       <div class="col">
          <h1> Are You Ready To Get Started?</h1>
-        <a href="#"><button class="btn btn-warning text-white btn-sm">User Guide</button></a>
+        <a href="#" id="bt"><button class="btn btn-warning text-white btn-sm">User Guide</button></a>
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@
 <h1>SERVICES</h1>
 <h4>Can be used from login portal</h4>
 <div class="row rowsetting">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto ">
+  <div class="col-lg-4  col-sm-110 col-10 d-block m-auto ">
   <div class="imgsetting d-block m-auto bg-warning text-white"><i class="fa fa-hourglass-start fa-3x">
 </i></div>
 <h2>Revival</h2>
@@ -152,13 +152,13 @@ Revive the policy as soon as possible to avoid high late fines.
 
 </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto al1">
+<div class="col-lg-4  col-sm-10 col-10 d-block m-auto al1">
   <div class="imgsetting d-block m-auto bg-warning text-white"><i class="far fa-money-bill-alt fa-3x"></i></div>
 <h2>Loan</h2>
 <p>In case of ENDOWMENT type policy, you would be allowed to raise a loan against your policy.<b>The essential condtion is that applicant should have paid at least 3 years of insurance premium in full.</b>You can repay the loan with interest or continue paying the interest and allow the loan to be deducted at the time of the claim payments.</p>
 </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto al1">
+<div class="col-lg-4  col-sm-10 col-10 d-block m-auto al1">
   <div class="imgsetting d-block m-auto bg-warning text-white"><i class="fab fa-amazon-pay fa-3x">
 </i></div>
 <h2>Pay Online</h2>
@@ -179,26 +179,26 @@ Revive the policy as soon as possible to avoid high late fines.
 <!-- start jumbotron-->
 <div class="jumbotron">
   <div class="col-12 text-center">
-    <h2 class="heading">BELOVED CUSTOMERS</h2>
+    <h2 class="heading text-info">CUSTOMER SPEAK</h2>
     <h5>
-        "Our's family"
+        "Our's Mirror"
     </h5>
     <div class="heading-underline"></div>
   </div>
   <br /><br /><br />
   <div class="row">
 
-    <div class="col-md-4 clients">
+    <div class="col-lg-4 col-sm-12 clients">
       <div class="row ">
-        <div class="col-md-4 text-center">
+        <div class="col-lg-4 col-sm-12 text-center">
           <img src="{% static 'Homeimage/pf3.jpg' %}" />
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8 col-sm-12 ">
           <blockquotes class="blackquotes">
             <i class="fas fa-quote-left"></i>
 
-            <p>
-            Great agent! Provides very good service ,submits my premiums on time and provide instantly any kind of help if needed.
+            <p class="text-center">
+            Great person! Provides very good service ,submits my premiums on time and provide instantly any kind of help if needed.
             If you are thinking to open an lic policy, I would highly recommend
             Narendra Kumar Singh.</p>
             <hr class="clients-hr" />
@@ -208,15 +208,15 @@ Revive the policy as soon as possible to avoid high late fines.
        </div>
     </div>
 
-    <div class="col-md-4 clients">
+    <div class="col-lg-4 col-sm-12 clients pd">
       <div class="row al">
-        <div class="col-md-4 text-center">
+        <div class="col-lg-4 col-sm-12 text-center">
           <img src="{% static 'Homeimage/pf5.png' %}" />
         </div>
-        <div class="col-md-8">
+      <div class="col-lg-8 col-sm-12">
           <blockquotes>
             <i class="fas fa-quote-left"></i>
-          <p>I have taken my life insurance from LIC because its Government based company.
+          <p class="text-center">I have taken my life insurance from LIC because its Government based company.
             Whatever the commitment they are making to the customer, they are keeping the same.I would highly recommend
           to take a LIC policy from NSLIC. </p>
             <hr class="clients-hr" />
@@ -226,15 +226,15 @@ Revive the policy as soon as possible to avoid high late fines.
        </div>
     </div>
 
-    <div class="col-md-4 clients">
+      <div class="col-lg-4 col-sm-12 clients bt">
       <div class="row al" >
-        <div class="col-md-4 text-center">
+          <div class="col-lg-4 col-sm-12 text-center">
           <img src="{% static 'Homeimage/pf2.jpg' %}" />
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8 col-sm-12 ">
           <blockquotes>
             <i class="fas fa-quote-left"></i>
-            <p>
+            <p class="text-center">
             My child's future is secure with lic child plan. The policy covers all the expenditures like Education,
             medical emergency, health issues etc.It was suggested to me by NSLIC, I would highly recommend
             to consult NSLIC.</p>
@@ -259,8 +259,8 @@ Revive the policy as soon as possible to avoid high late fines.
 <header id="page-header">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 m-auto text-center">
-        <h1>About</h1>
+      <div class="col-lg-6 col-sm-12 m-auto text-center">
+        <h1>ABOUT</h1>
         <p>Secured future , Better present.</p>
       </div>
     </div>
@@ -271,7 +271,7 @@ Revive the policy as soon as possible to avoid high late fines.
 <section id="about" class="py-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-6" id="info1">
+      <div class="col-lg-6 col-sm-12" id="info1">
         <h1>Dear guests,Hello!</h1>
       <p>I believe that Insurance is not merely an investment to save taxes. It's a lot more!
          Whether it's about the Financial security for your family or having that
@@ -282,7 +282,7 @@ Revive the policy as soon as possible to avoid high late fines.
          This website is fully devoted for helping you to learn about your policy.
          We are simply here to protect you & your Investment made to us.</p>
       </div>
-      <div class="col-md-6" id="info2">
+      <div class="col-lg-6 col-sm-12" id="info2">
         <img src="{% static 'Homeimage/dp.jpeg' %}" alt="">
         <h1>NARENDRA KUMAR SINGH</h1>
           <p>Life Insurance Advisor<br>CM Club Member<br>
@@ -361,9 +361,9 @@ Revive the policy as soon as possible to avoid high late fines.
         <div class="container">
 	       <div class="row">
 		<div class="col-ms-6 " id="sintro">
-			<h3><strong>Contact</strong></h3>
+			<h3><strong>CONTACT</strong></h3>
       <br />
-		        <strong class="footertext">NSLIC</strong>
+		        <strong class="footertext text-danger nam">NSLIC</strong>
                         <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> LIC India,</strong></p>
 		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
 
@@ -394,15 +394,16 @@ Revive the policy as soon as possible to avoid high late fines.
 </div>
 </div>
 
+
 <section class="developer">
 <div class="container text-center">
-<h1>WEB DEVELOPER</h1>
+<h1>DEVELOPER</h1>
 
    <div class="d-block m-auto">
    <figure class="figure">
    <a href="https://www.linkedin.com/in/prince-singh-122b51186/"><img src="{% static 'Homeimage/p.jpg' %}" class="figure-img img-filled rounded-circle" height="250px" width="250px"></a>
    <figcaption>
-      <h4>Prince Singh</h4><b><p class="figure-caption">B.Tech-NIT Surathkal</p></b>
+      <h4>Prince Singh</h4><b><p class="figure-caption text-white">B.Tech-NIT Surathkal</p></b>
 
     </figcaption>
     </figure>
@@ -410,6 +411,7 @@ Revive the policy as soon as possible to avoid high late fines.
 
 </div>
 </section>
+</div>
 
 </body>
 </html>
