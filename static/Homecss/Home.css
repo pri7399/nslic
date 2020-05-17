@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
@@ -8,6 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
 {% load static %}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 body{
 margin:0px;
 padding:55px 0px 0px 0px;
@@ -317,7 +319,7 @@ font-family: 'Caveat', cursive;
 color:black;
 margin-left:25px;
 font-size:25px;
-font-family: 'Caveat', cursive;
+font-family: 'Cormorant Garamond', serif;
 word-spacing:2px;
 text-shadow: 0 1px 0 #efefef,
              0 2px 0 #efefef,
@@ -328,7 +330,7 @@ text-shadow: 0 1px 0 #efefef,
 }
 
 #info1 h1{
-font-family: 'Kaushan Script', cursive;
+font-family: 'Cormorant Garamond', serif;
 padding:0px 0px 0px 0px;
 font-size:25px;
 color:blacK;
@@ -559,8 +561,11 @@ text-shadow: 0 1px 0 #efefef,
 #about #info1 h1{
   font-size:60px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+
 #about #info1 p{
-  font-size:60px;
+  font-size:50px;
+  font-family: 'Cormorant Garamond', serif;
 }
 #info2 h1{
 font-size:50px;
@@ -602,6 +607,9 @@ margin-left:5px;
               .footer #sintro .nam{
                 font-size:65px;
                 }
+                .footer #sintro {
+                  padding:50px 0px 0px 70px;
+                  }
 
               .footer #oads h4{
                   font-size:35px;
@@ -612,10 +620,14 @@ margin-left:5px;
 
 
           .footer #oads{
-              padding:0px 0px 0px 70px;
+              padding:50px 0px 0px 70px;
                  }
           .footer .copyright p{
             font-size: 30px;
+
+          }
+          .footer .copyright{
+            padding:20px 50px 0px 0px;
           }
 
 
@@ -628,6 +640,9 @@ margin-left:5px;
   .developer p{
                 font-size:30px;
               }
+  .developer {
+     padding: 30px 20px 10px 0px;
+  }
 
 
 
