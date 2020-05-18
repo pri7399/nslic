@@ -460,31 +460,34 @@ text-shadow: 0 1px 0 #efefef,
    z-index: 2;
  }
 .nav-links {
-   margin-top:370px;
+  margin-top:1785px;
    position: fixed;
    background: white;
-   height: 100vh;
+   height: 200vh;
    width: 100%;
    flex-direction: column;
-   clip-path: circle(100px at 90% -20%);
-   -webkit-clip-path: circle(100px at 90% -20%);
+   clip-path: circle(100px at 90% -5%);
+   -webkit-clip-path: circle(100px at 90% -5%);
    transition: all 1.5s ease-out;
    pointer-events: none;
  }
  .nav-links li a {
  color:black;
- padding-top:20px;
-text-decoration: none;
- font-size: 50px;
+
+ align-content: center;
+ text-decoration: none;
+ font-size: 120px;
  font-family: 'Oswald', sans-serif;
 }
 .nav-links li{
   list-style: none;
+  padding-top: 20px;
+  margin-right:10px;
 }
 
  .nav-links.open {
-   clip-path: circle(450px at 90% -10%);
-   -webkit-clip-path: circle(450px at 90% -10%);
+   clip-path: circle(950px at 90% 0%);
+   -webkit-clip-path: circle(950px at 90% 0%);
    pointer-events: all ;
  }
 
