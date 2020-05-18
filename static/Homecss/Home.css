@@ -454,8 +454,10 @@ text-shadow: 0 1px 0 #efefef,
    transform: translate(-5%, -50%);
    z-index: 2;
  }
+
+	
 .nav-links {
-  margin-top:1785px;
+  margin-top:1985px;
    position: fixed;
    background: white;
    height: 200vh;
@@ -471,18 +473,18 @@ text-shadow: 0 1px 0 #efefef,
 
  align-content: center;
  text-decoration: none;
- font-size: 120px;
+ font-size: 80px;
  font-family: 'Oswald', sans-serif;
 }
 .nav-links li{
   list-style: none;
-  padding-top: 20px;
+  padding-top:30px;
   margin-right:10px;
 }
 
  .nav-links.open {
-   clip-path: circle(950px at 90% 0%);
-   -webkit-clip-path: circle(950px at 90% 0%);
+   clip-path: circle(850px at 90% 0%);
+   -webkit-clip-path: circle(850px at 90% 0%);
    pointer-events: all ;
  }
 
