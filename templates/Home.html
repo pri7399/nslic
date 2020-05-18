@@ -15,7 +15,7 @@
   <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
    <div class="container">
      <div class="logo">
-           <a href="#"><img src="{% static 'Homeimage/Logo.png' %}" alt="logo" /></a>
+           <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
          </div>
        <div class="collapse navbar-collapse" >
      <ul class="navbar-nav ml-auto ">
@@ -368,7 +368,7 @@ Revive the policy as soon as possible to avoid high late fines.
 		<div class="col-ms-6 " id="sintro">
 			<h3><strong>CONTACT</strong></h3>
       <br />
-		        <strong class="footertext text-dark nam">NSLIC</strong>
+		        <strong class="footertext  nam">NSLIC</strong>
                         <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> LIC India,</strong></p>
 		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
 
@@ -417,6 +417,17 @@ Revive the policy as soon as possible to avoid high late fines.
 </div>
 </section>
 </div>
+<script>
+const hamburger= document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+
+  });
+</script>
 
 </body>
 </html>
+
