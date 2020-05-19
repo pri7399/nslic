@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
 
@@ -11,17 +14,24 @@
   padding-right:3px;
   font-family: 'Oswald', sans-serif;
 }
+.navbar .logo img{
+  height:40px;
+  width:100px;
+}
 
 .header-title h2{
 font-size:40px;}
 
 .footer #oads{
-padding:0px 0px 0px 150px;
+padding:50px 0px 0px 250px;
 }
 
 .footer #sintro{
 padding:0px 0px 0px 80px;
+}
 
+.footer #sintro h3{
+color:white;
 }
 /**pop-up css**/
 #upbox{
@@ -108,6 +118,77 @@ padding:0px 0px 0px 80px;
   width: 1125px;
 
 }
+/*----Loan CSS Begins-----*/
+.jumbotron p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:20px;
+}
+.jumbotron .ml{
+  font-family: 'Anton', sans-serif;
+}
+.jumbotron .heading{
+  font-family: 'Bebas Neue', cursive;
+  font-size:50px;
+  padding-bottom: 20px;
+}
+/*-----Loan CSS ends-----*/
+/*-----Bond paper CSS starts-----*/
+.bp{
+  font-family: 'Bebas Neue', cursive;
+  font-size:80px;
+
+}
+.mal p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:20px;
+}
+.mal .btn{
+  margin-left:80px;
+}
+
+
+
+
+/*-----Bond paper CSS ends-----*/
+/*-----Pay CSS Starts-----*/
+#pay .card img{
+  border: 3px solid black;
+  height:350px;
+  }
+  #pay .card #img1{
+    height:180px;
+    border-bottom:3px solid white;
+
+  }
+  #pay .card #img2{
+    height:180px;
+    border-top:3px solid white;
+
+  }
+#pay .card p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:25px;
+}
+#pay .card li{
+  list-style: disc;
+  font-size:18px;
+  padding-top: 20px;
+
+}
+#pay .card h5{
+  font-family: 'Bebas Neue', cursive;
+  font-size:40px;
+  color:red;
+}
+#pay .card .vid video {
+margin-left: 300px;
+}
+
+
+
+
+
+/*-----Pay CSS ends-----*/
 
 
 /**Header and footer **/
@@ -131,10 +212,15 @@ background-color:black;}
 width:100%;
 height:310px;
 
+
 }
 #main-header a{
   padding-top: -30px;
   postion: center;
+}
+#main-header #button{
+    margin-left:5px;
+
 }
 .font-div{
 width:30%;
@@ -158,8 +244,8 @@ float:left;}
 .container .d{
 float:right;}
 .ourservices{
-padding: 10px 0px 60px;
-height:650px;
+padding: 10px 0px 10px;
+height:500px;
 }
 .ourservices h1{
 font-weight:bold;
@@ -197,9 +283,9 @@ color: #6c757d !important;
 
 
 /**media queery---for responsive**/
-@media(min-width:992px){
-}
-@media(min-width:768px) {
+
+@media(min-width:992px) {
+
 	.box{
 	 display:flex;
 	}
@@ -241,64 +327,122 @@ color: #6c757d !important;
 	  left:-100%;
 	 }
 	}
+  #pay #mb{
+    display:none;
+  }
 
 }
-@media (max-width: 768px)
+@media(max-width:991px)
 {
+  /*-----Pay CSS Starts-----*/
+  #pay #pc{
+    display:none;
+  }
+  #pay .card img{
+    border: 3px solid blue;
+    height:600px;
+    }
+    #pay .card #img1{
+      height:180px;
+      border-bottom:3px solid white;
+
+    }
+    #pay .card #img2{
+      height:180px;
+      border-top:3px solid white;
+
+    }
+  #pay .card p{
+    font-family: 'Cormorant Garamond', serif;
+    font-size:30px;
+  }
+  #pay .card li{
+    list-style: disc;
+    font-size:18px;
+    padding-top: 20px;
+
+  }
+  #pay .card h5{
+    font-family: 'Bebas Neue', cursive;
+    font-size:40px;
+    color:red;
+  }
+  #pay .card .vid video {
+  margin-left: 130px;
+  }
+
+
+
+
+
+  /*-----Pay CSS ends-----*/
+
+
+
+
+
+  .navbar {
+      min-height:90px;
+  }
+  .navbar .logo img{
+    height:80px;
+    width:300px;
+  }
+  .navbar .navbar-toggler{
+    height:70px;
+  }
+  .navbar .navbar-nav{
+    height:350px;
+  }
+  .navbar .navbar-nav li{
+  font-size:30px;
+  padding-top:30px;
+
+  }
+
+
+
+
   .port-item {
     height:110px;
   }
   #main-header {
-    width: 467px;
+    width: 600px;
+
+  }
+  #home, #home1 , #pay , #contact {
+    width:585px;
+  }
+  .footer{
+    width:585px;
+}
+
+	#home .ourservices{
+			 padding: 20px 0px 10px;
+		 height:1030px;
+			 }
+	 #home .rowsetting .al1{
+   padding-top:30px;}
+
+	 #home .rowsetting h2{
+		margin-top:5px;
+		 font-weight:bold;
+		font-size:20px;
+		}
+		#home .rowsetting{
+		margin:50px 0px;
+		}
+    .mal p{
+      font-size:30px;
+    }
+    .mal .btn{
+      margin-left:200px;
+    }
+  #main-header #button{
+      margin-left:190px;
+
   }
 
-	#home .ourservices{
-			 padding: 60px 0px 10px;
-		 height:1000px;
-			 }
-	 #home .rowsetting p{
-	 padding:0px;}
-
-	 #home .rowsetting h2{
-		margin-top:5px;
-		 font-weight:bold;
-		font-size:20px;
-		}
-		#home .rowsetting{
-		margin:50px 0px;
-		}
-
-	 #home .footer #oads{
-			 padding:0px 0px 0px 80px;
-					}
-}
-
-@media(min-width:460px) and (max-width:574px){
-
-
-
-
-
-	#home .ourservices{
-			 padding: 60px 0px 10px;
-		 height:1000px;
-			 }
-	 #home .rowsetting p{
-	 padding:0px;}
-
-	 #home .rowsetting h2{
-		margin-top:5px;
-		 font-weight:bold;
-		font-size:20px;
-		}
-		#home .rowsetting{
-		margin:50px 0px;
-		}
-
-	 #home .footer #oads{
-			 padding:0px 0px 0px 80px;
-					}
-}
 
 
 
@@ -306,5 +450,37 @@ color: #6c757d !important;
 
 
 
+
+     .footer #sintro h3{
+      font-size:40px;
+      }
+     .footer #sintro p{
+        font-size:18px;
+        }
+       .footer #sintro .nam{
+          font-size:25px;
+          }
+           .footer #sintro {
+            padding:50px 0px 0px 70px;
+            }
+
+       .footer #oads h4{
+            font-size:25px;
+            }
+             .footer #oads p{
+              font-size:18px;
+              }
+
+
+     .footer #oads{
+        padding:50px 0px 0px 70px;
+           }
+   .footer .copyright p{
+      font-size: 18px;
+
+    }
+   .footer .copyright{
+      padding:20px 50px 0px 20px;
+    }
 
 }
