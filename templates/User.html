@@ -14,75 +14,58 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
-   <div class="container">
-      <a href="" class="navbar-brand text-warning font-weight-bold">
-         NSLIC </a>
+  <div class="container">
+    <div class="logo">
+          <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+        </div>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+      data-target="#collapsenavbar">
+      <span class="navbar-toggler-icon"> </span>
+       </button>
+    <div class="collapse navbar-collapse text-center" id="collapsenavbar">
 
-       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
-       data-target="#collapsenavbar">
-       <span class="navbar-toggler-icon"> </span>
-        </button>
-     <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+    <ul class="navbar-nav ml-auto ">
+              <li class="nav-item"><a class="nav-link text-dark" href="/" >Home</a></li>
 
-     <ul class="navbar-nav ml-auto ">
-               <li class="nav-item"><a class="nav-link text-dark" href="/" >Home</a></li>
+              {%if user.is_authenticated%}
+              <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+              <li class="nav-item"><a class="btn btn-outline-warning fa-2x" href="Logout">Logout</a></li>
+              {%else%}
+              <li class="nav-item"><a class="btn btn-outline-warning fa-2x" href="Login">Login</a></li>
+              {%endif%}
 
-               {%if user.is_authenticated%}
-               <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="Logout">Logout</a></li>
-               {%else%}
-               <li class="nav-item"><a class="nav-link text-dark" href="Login">Login</a></li>
-               {%endif%}
-
-             </ul>
-  </div>
-  </div>
-  </nav>
+            </ul>
+ </div>
+ </div>
+ </nav>
   {%if user.is_authenticated%}
 
-    <!-- Pop-up material begins -->
- <div class="popup" id="upbox">
-   <div class="popup-content">
-     <img src="{% static 'Userimage/close.jpg' %}" alt="close" class="close" />
-     <div class="fas fa-camera-retro fa-2x"</div>
-
-   <form method="POST" enctype="multipart/form-data">
-     {% csrf_token %}
-      {{form.as_p}}
-    <div class="form-group">
-   <button class="btn btn-outline-info" type="submit">Update</button>
-</div>
-    </form>
-
-  </div>
-</div>
-</div>
-
-
-
-
-      <!-- Pop-up material ends -->
+  <!-- Pop-up material ends -->
 
 
 <br /><br />
 <div class="container">
 <header id="main-header">
 <div class="container">
-        <div class="row no-gutters" >
+        <div class="row no-gutters " >
                <div class="col-lg-4 col-md-4 bg-info text-danger">
                 <img src="{{ user.profile.ppic.url }}" >
-                <a href="#" class="btn btn-outline-danger" id="button">
+                <a href="Pupload" class="btn btn-outline-danger" id="button">
                   Update profile picture</a>
 
                 </div>
                 <div class="col-lg-8 col-md-8">
                 <div class="d-flex flex-column">
                 <div class="p-5 bg-dark text-white">
-                   <div class="d-flex flex-row">
-                       <h1 align="center">{{ user.profile.pname }}</h1>
+                  <div class="row">
+                     <div class="col-lg-9 col-md-12 col-sm-12 col-12 d-block m-auto">
+                      <h1 align="center">{{ user.profile.pname }}</h1>
+                 </div>
+                     <div class="col-lg-2 col-md-12 col-sm-12 col-12 d-block m-auto text-center">
 
+                    <a class="btn btn-warning" href="{{ user.profile.npreceipt.url }}" >Details</a>
 
-                    </div>
+                 </div>
                 </div>
                 </div>
                 <div class="p-3 text-white bg-black">
@@ -94,12 +77,10 @@
               </div>
                   <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
                     <h6> Next Premium Amount-</h6>
-                   <h4>  &#x20b9; {{user.profile.npamount}} </h4>
+                   <h4>  &#x20b9; {{user.profile.npamount}}.0 </h4>
 
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-6 d-block m-auto">
 
-          </div>
             </div>
 
 
@@ -136,13 +117,13 @@
 
       <div class="card card-body py-5">
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-5 d-block m-auto">
-        <h3>  {{user.profile.pstatus}}  </h3>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
+        <h3>   {{user.profile.pstatus}}  </h3>
         <h6>   Policy status</h6>
       </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-5 d-block m-auto">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
         <h3>Premium Without Tax</h3>
-        <h6>  &#x20b9; {{user.profile.npamountwt}}</h6>
+        <h6>  &#x20b9; {{user.profile.npamountwt}}.0</h6>
       </div>
     </div>
 
@@ -162,10 +143,10 @@
 <!-- Animation from youtube ends -->
 
 <section class="container ourservices text-center">
-<h1>Policy Term-{{user.profile.prempayterm}}</h1>
+<h1>Policy Term-{{user.profile.prempayterm}} years</h1>
 <h6>Total years ,you will be secure under this policy</h6>
 <div class="row rowsetting">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+  <div class="col-lg-4 col-md-4 col-sm-10 col-10 d-block m-auto ">
   <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-calendar-day fa-3x"></i><h2>DATES</h2></div>
 
 <h6>Date of commencement- {{user.profile.doc}}</h6>
@@ -176,7 +157,7 @@
 
 
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+<div class="col-lg-4 col-md-4 col-sm-10 col-10 d-block m-auto al1">
   <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-people-carry fa-3x"></i><h2>NOMINEE</h2></div>
 
 <p>The person who will be beneficiary in your absence</p>
@@ -187,7 +168,7 @@
   </h5>
   </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+<div class="col-lg-4 col-md-4 col-sm-10 col-10 d-block m-auto al1">
   <div class="imgsetting d-block m-auto bg-info text-white"><i class="fas fa-luggage-cart fa-3x"></i><h2>PLAN</h2></div>
 <h4>{{user.profile.plan}}</h4>
 
@@ -203,29 +184,34 @@
 </section>
 <div class="jumbotron">
   <div class="col-12 text-center">
-    <h2 class="heading">LOAN </h2>
+    <h2 class="heading text-warning">LOAN </h2>
 
   </div>
+  <div class="text-danger ml">
 
-  <h4>You Can get a maximum loan of {{user.profile.maxloan}} on this policy.</h4>
+  <h4 >You Can get a maximum loan of &#x20b9;{{user.profile.maxloan}}.0 on this policy.</h4>
+</div>
 
-  In case of ENDOWMENT type policy, Life Insurance Corporation of India (LIC) also provides secured personal loans using its life insurance policies
+  <p>
+    In case of ENDOWMENT type policy, Life Insurance Corporation of India (LIC) also provides secured personal loans using its life insurance policies
   as collateral.The essential condtion is that applicant should
   have paid at least 3 years of insurance premium in full.You can repay the loan with interest or continue paying the interest and allow
-  the loan to be deducted at the time of the claim payments.Loan against insurance policy requires the borrower to submit the insurance policy with the lender as collateral. If the borrower is
-  unable to pay back the loan, then the lender reserves the right to hold on to the policy till the debt is cleared by the borrower.
+  the loan to be deducted at the time of the claim payments.<strong>Loan against insurance policy requires the borrower to submit the insurance policy with the lender as collateral. If the borrower is
+  unable to pay back the loan, then the lender reserves the right to hold on to the policy till the debt is cleared by the borrower.</strong>
   you are required to visit the nearby LIC office and fill out the loan application forms along with applicable KYC documents and submit those along
   with the original policy document.Once the details of the application are verified, a loan amount of up to 90% of the surrender value of the policy
   is paid out. In case your policy is eligible for loan, then contact us, you will make all arrangements for you to get the loan.
+</p>
 </div>
 
 
 <hr />
-<div class="col-12 text-center">
-  <h2 class="heading">Your Bond Papers</h2>
+<div class="col-12 text-center bp">
+  <h2 class="heading">Your Bond Paper</h2>
 
 </div>
-<div class="row">
+<hr />
+<div class="row mal">
   <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto">
     <img src="{{ user.profile.bpic.url }}" height="600px" width="600px"/>
 </div>
@@ -233,22 +219,20 @@
 <p>
    If it is not your bond paper then please update it here, otherwise ignore this text.
 </p>
-<a href="upload" class="btn btn-outline-danger">
+<a href="upload" class="btn btn-outline-info">
   Update Bond picture</a>
-
-
 </div>
 
 <hr />
 </div>
 <hr />
-</div
+</div>
 
     <!-- Premium Paid -->
     <div id="home1" class="collapse">
       <div class="card card-body bg-danger text-white py-5">
         <h2>Premium Paying Term</h2>
-        <h4 >{{user.profile.prempayterm}} years</h4>
+        <h4 >{{user.profile.prempayterm}}</h4>
       </div>
 
       <div class="card card-body py-5">
@@ -261,10 +245,10 @@
               <h4 class="card-title">Total Premium Paid</h4>
               <p class="card-text">Total money that has been paid by you till today</p>
               <p class="p-2 mb-3 bg-dark text-white">
-                Amount: &#x20b9; {{user.profile.ptotal}}.00
+                Amount: &#x20b9; {{user.profile.ptotal}}.0
               </p>
               <p class="p-2 mb-3 bg-dark text-white">
-              Late fee: &#x20b9; 0.00<br />
+              Late fee: &#x20b9; 0.0<br />
 
               </p>
               Pay premiums on time to avoid late fee
@@ -277,7 +261,7 @@
               <h4 class="card-title">Surrender Value</h4>
               <p class="card-text">Money which is payable to you when you decide to discontinue the policy</p>
               <p class="p-2 mb-3 bg-dark text-white">
-                Amount: &#x20b9; {{user.profile.svalue}}.00
+                Amount: &#x20b9; {{user.profile.svalue}}.0
               <p >
                 Surrender value is payable only after three full years premiums are paid to LIC
                 Surrender of policy is not recommended.
@@ -291,10 +275,10 @@
               <h4 class="card-title">Maturity Value</h4>
               <p class="card-text">Money that you will receive if you pay premiums regularly for full term</p>
               <p class="p-2 mb-3 bg-dark text-white">
-                Bonus: &#x20b9; {{user.profile.mbonus}}.00
+                Bonus: &#x20b9; {{user.profile.mbonus}}.0
               </p>
               <p class="p-2 mb-3 bg-dark text-white">
-               Total Amount: &#x20b9; {{user.profile.mvalue}}.00
+               Total Amount: &#x20b9; {{user.profile.mvalue}}.0
               </p>
             </div>
 
@@ -305,10 +289,9 @@
     <!-- PAY ONLINE -->
     <div id="pay" class="collapse">
       <div class="card card-body bg-primary text-white py-5">
-        <h2>PAY ONLINE </h2>
-        <p class="lead">We will be using "licindia" website as third party for online payment. Follow these simple steps to pay your premium online easily.</p>
+      <p class="lead">We will be using "licindia" website as third party for online payment. Follow these simple steps to pay your premium online easily.</p>
       </div>
-      <div class="card card-body py-5">
+      <div class="card card-body py-5" id="pc">
         <h3> &nbsp &nbsp &nbsp Follow These Steps</h3>
 
         <hr>
@@ -316,7 +299,7 @@
         <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Go to <a class="link text-white bg-dark " href="https://ebiz.licindia.in/D2CPM/#DirectPay">Pay Online</a> page and select the type of payment you want to make.</p>
 <br /><br />
         <img src="{% static 'Userimage/pay1.jpg' %}"><br /><br />
-        <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Let you want to pay your renewal, then select "Reanewal Premium / Revival"</p><br /><br />
+        <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp --> Let you want to pay your renewal, then select "Reanewal Premium / Revival"</p><br /><br />
           <img src="{% static 'Userimage/pay2.jpg' %}">
           <br /><br />
           <hr>
@@ -326,12 +309,235 @@
           <br /><br />
           <hr>
           <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 3</h5>
-          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Fill your detail's carefully, Look in your
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp You will be required to enter details such as policy number,
+            your date of birth ,instalment premium (excluding taxes) and so on.Fill your detail's carefully, Look in your
             profile page of our website for all the details.Premium without tax is written seprately on profile page for this purpose only.</p><br /><br />
           <img src="{% static 'Userimage/pay4.jpg' %}">
           <br /><br />
+          <hr />
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 4</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp While entering the details, ensure that you have mentioned it correctly and timely or
+            else session will expire and you will have to start the process all over again.After entering all details correctly, select 'I Agree', and click on submit.
+              </p><br />
+          <img src="{% static 'Userimage/pay6.jpg' %}">
+          <br /><br />
+          <hr />
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 5</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Validate the details mentioned by you earlier.
+             If you have more than one LIC policy for which you want to make payments, then you can enter the policy number and
+             premium amount (excluding taxes) to the list by scrolling down. Click on proceed once done.
+              </p><br />
+          <img id="img1" src="{% static 'Userimage/pay7.png' %}">
+          <img id="img2" src="{% static 'Userimage/pay8.jpg' %}">
+          <br /><br />
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 6</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp This step will show you the
+            number of policies for which premium is being paid and total premium amount to be paid. Click on 'Pay Now' to make the payments.
+              </p><br />
+          <img src="{% static 'Userimage/pay9.jpg' %}">
+          <br /><br />
+          <hr />
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 7</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp You will have three options to make payment:
+            <ul>
+              <li>Via Internet banking, e-wallets, credit cards, debit cards, American Express Cards,</li>
+              <li>Standard Chartered Bank UPI like GooglePay, PhonePat etc</li>
+              <li>Axis Pay UPI</li>
+           </ul>
+              </p><br />
+          <img src="{% static 'Userimage/pay10.png' %}" class="bg-dark">
+
+          <h3 align="center">
+            Choose the option with which you wish to make the payment.
+          </h3><br /><br />
+          <hr />
+          <h2 align="center">Summary of above steps</h2>
+          <hr />
+          <div class="vid">
+
+          <video width="480" height="280" controls >
+            <source src ="{% static 'Userimage/summary.mp4' %}"  type="video/mp4" />
+          </video>
+
+
+          </div>
+          <br /><br />
+          <hr />
+          <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 8</h5>
+          <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp View these videos for most favourable payment methods:
+            <div class="row">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+               <h6> Using Debit Card</h6>
+               <video width="480" height="280" align="center" controls>
+                 <source src ="{% static 'Userimage/debit.mp4' %}" type="video/mp4" />
+               </video>
+          </div>
+              <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+                <h6> Using PhonePay ,GooglePay etc</h6>
+                <video width="480" height="280" align="center" controls>
+                  <source src ="{% static 'Userimage/upi.mp4' %}" type="video/mp4" />
+                </video>
+          </div>
+
+        </div>
+              </p><br />
+              <hr />
+              <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 9</h5>
+              <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp After Successful payment from
+                any method you will get a mail from LIC,open it and and dowload the receipt</p>
+                <br />
+            <img src="{% static 'Userimage/pay11.jpg' %}">
+           <img src="{% static 'Userimage/pay12.jpg' %}">
+              </p><br />
+              <h5> &nbsp &nbsp &nbsp &nbsp &nbsp STEP: 10</h5>
+              <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp After downloading you will get a receipt like below image. Please send
+                 this to 9931431069 through whatsaap or mail the receipt to nslic86@gmail.com for our confirmation</p>
+                <br />
+            <img src="{% static 'Userimage/pay13.png' %}">
+            </p><br />
+<hr />
+Congrats You Paid Your Premium
+<hr />
+
+
 
        </div>
+       <div class="card card-body py-5" id="mb">
+         <h3> &nbsp &nbsp &nbsp Follow These Steps</h3>
+
+         <hr>
+         <h5>  STEP: 1</h5>
+         <p>  Go to <a class="btn text-white bg-info " href="https://ebiz.licindia.in/D2CPM/#DirectPay">Pay Online</a> page and select the type of payment you want to make.</p>
+       <br /><br />
+         <img src="{% static 'Userimage/mb/mbpay1.jpg' %}"><br /><br />
+         <p> Let you want to pay your renewal, then select "Renewal Premium"</p><br /><br />
+           <img src="{% static 'Userimage/mb/mbpay2.jpg' %}">
+           <br /><br />
+           <hr>
+           <h5>STEP: 2</h5>
+           <p> Click on Proceed</p><br /><br />
+           <img src="{% static 'Userimage/mb/mbpay3.jpg' %}">
+           <br /><br />
+           <hr>
+           <h5> STEP: 3</h5>
+           <p> You will be required to enter details such as policy number,
+             your date of birth ,instalment premium (excluding taxes) and so on.Fill your detail's carefully, Look in your
+             profile page of our website for all the details.Premium without tax is written seprately on profile page for this purpose only.After entering all details correctly, click on submit.</p><br /><br />
+           <img src="{% static 'Userimage/mb/mbpay4.jpg' %}">
+           <br /><br />
+           <hr />
+           <h5> STEP: 4</h5>
+           <p>While entering the details, ensure that you have mentioned it correctly and timely or
+             else session will expire and you will have to start the process all over again.Now select 'I Agree', and click on submit.
+               </p><br />
+           <img src="{% static 'Userimage/mb/mbpay5.jpg' %}">
+           <br /><br />
+           <hr />
+           <h5> STEP: 5</h5>
+           <p>Validate the details mentioned by you earlier. Click on proceed once done.
+               </p><br />
+           <img  src="{% static 'Userimage/mb/mbpay6.jpg' %}">
+           <hr />
+           <br /><br />
+           <h5> STEP: 6</h5>
+           <p>This step will show you the policy detail for which premium is being paid and total premium amount to be paid.
+             Click on "Check and Pay" or "Pay Now" to make the payments.
+               </p><br />
+           <img src="{% static 'Userimage/mb/mbpay7.jpg' %}">
+           <br /><br />
+           <hr />
+           <h5> STEP: 7</h5>
+           <p>You will have three options to make payment:
+             <ul>
+               <li>Via Internet banking, e-wallets, credit cards, debit cards, American Express Cards,</li>
+               <li>Standard Chartered Bank UPI like GooglePay, PhonePat etc</li>
+               <li>Axis Pay UPI</li>
+            </ul>
+               </p><br />
+           <img src="{% static 'Userimage/mb/mbpay8.jpg' %}" class="bg-dark">
+
+           <h3 align="center">
+             Choose the option with which you wish to make the payment.
+           </h3><br /><br />
+           <hr />
+
+           <hr />
+           <h2 align="center">Summary of above steps</h2>
+           <hr />
+           <div class="vid">
+
+           <video width="280" height="399" controls >
+             <source src ="{% static 'Userimage/mbsummary.mp4' %}"  type="video/mp4" />
+           </video>
+
+
+           </div>
+           <br /><br />
+
+           <hr />
+           <h5> STEP: 8</h5>
+           <p> Watch these videos for most favourable payment methods:
+             <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+                <h6> Using Debit Card</h6>
+                <video width="420" height="399" align="center" controls>
+                  <source src ="{% static 'Userimage/debit.mp4' %}" type="video/mp4" />
+
+                </video>
+           </div>
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+                 <h6> Using PhonePay ,GooglePay etc</h6>
+                 <video width="420" height="399" align="center" controls>
+                   <source src ="{% static 'Userimage/upi.mp4' %}" type="video/mp4" />
+                 </video>
+           </div>
+
+         </div>
+               </p><br />
+               <hr />
+               <h5> STEP: 9</h5>
+               <p> After Successful payment from
+                 any method you will get this page as confiramtion for Successful transaction</p>
+                 <br />
+             <img src="{% static 'Userimage/mb/mbpay9.jpg' %}">
+
+               </p><br />
+               <hr />
+               <h5> STEP: 10</h5>
+               <p> After this <a class="btn text-white bg-info " href="https://ebiz.licindia.in/D2CPM/#DirectPay">Click here</a>
+                .You will get to below page. Select transaction status here.</p>
+                 <br />
+             <img src="{% static 'Userimage/mb/mbpay10.jpg' %}">
+             </p><br />
+             <hr />
+             <h5> STEP: 11</h5>
+             <p>You will be required to enter details such as policy number,
+               Date of transaction(Today's Date) ,Type of transaction(Reanewal, revival etc) .Fill detail's correctly and then click on submit.
+               After this you will  receipt of premium paid. Open it and download it.</p>
+               <br />
+           <img src="{% static 'Userimage/mb/mbpay11.jpg' %}">
+           </p><br />
+     <hr />
+
+
+               <h5> STEP: 12</h5>
+               <p>  After downloading you will get a receipt like below image. Please send
+                  this to 9931431069 through whatsaap or mail the receipt to nslic86@gmail.com for our confirmation</p>
+                 <br />
+             <img src="{% static 'Userimage/mb/mbpay12.jpg' %}">
+             </p><br />
+       <hr />
+       <h5 align="center">Congrats You Paid Your Premium</h5>
+       <hr />
+
+
+
+        </div>
+
+
+
+
+
     </div>
 
     <!-- CONTACT -->
@@ -397,13 +603,13 @@
         <div class="container">
 	       <div class="row">
 		<div class="col-ms-6 " id="sintro">
-			<h3><strong>Contact Us</strong></h3>
+			<h3><strong>CONTACT</strong></h3>
       <br />
-		        <strong class="footertext">NSLIC</strong>
-                        <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> Agent-LIC of India,</strong></p>
-		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+		        <strong class="footertext nam">NSLIC</strong>
+                        <p>Narendra Kumar Singh<br>The Chairman Club Member <br> Agent-LIC of India,</p>
+		        <p>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
 
-                        <p><strong>EMAIL  ID:-</strong><br>
+                        <p>EMAIL  ID:-<br>
 			<a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
                         </p>
                    </div>
@@ -467,7 +673,16 @@
 
 
     </script>
+    <script>
+    const hamburger= document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links li");
 
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+
+      });
+    </script>
 
 
 </body>
