@@ -29,21 +29,25 @@ def Login(request):
 
 
 def User(request):
+   return render(request, 'User.html')
+
+
+def pupload(request):
     info=request.user.profile
     i_form = PpicForm(instance=info)
-
-
     if request.method =='POST':
         i_form = PpicForm(request.POST, request.FILES,instance=info)
         if i_form.is_valid():
             i_form.save()
             context = {'form' : i_form}
-            return render(request, 'User.html',context)
-
+            return render(request, 'Pupload.html',context)
 
     else:
         print("non-post")
-        return render(request, 'User.html')
+        return render(request, 'Pupload.html')
+
+
+
 
 def bond(request):
     info=request.user.profile
@@ -53,12 +57,13 @@ def bond(request):
         if b_form.is_valid():
             b_form.save()
             context = {'form' : b_form}
-            return render(request, 'bond.html',context)
+            return render(request, 'bondpic.html',context)
 
 
     else:
         print("non-post")
-        return render(request, 'bond.html')
+        return render(request, 'bondpic.html')
+   
 
 
 
