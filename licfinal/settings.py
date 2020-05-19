@@ -123,18 +123,32 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL= '/media/'
-
-STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS= [
-os.path.join(BASE_DIR, 'static'),
-]
-
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
-
 }
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAR373N2QC7WD757NH'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'nslictest2'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = 'public-read'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'hello_django.storage_backends.StaticStorage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_CUSTOM_DOMAIN = '% s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_LOCATION = 'static'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
