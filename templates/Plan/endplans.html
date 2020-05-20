@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,21 +7,32 @@
 
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="swiper.min.css">
-<link rel="stylesheet" type="text/css" href="style1.css">
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/swiper.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/style1.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  @media(max-width:992px){
+section #first{
+  margin-top:-60px;
+
+}
+}
+
+
+</style>
 
 </head>
 <body>
 <!-- Navbar-->
   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
    <div class="container">
-      <a href="" class="navbar-brand text-warning font-weight-bold">
-         NSLIC </a>
+     <div class="logo">
+           <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+         </div>
 
        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
        data-target="#collapsenavbar">
@@ -29,24 +41,16 @@
      <div class="collapse navbar-collapse text-center" id="collapsenavbar">
 
      <ul class="navbar-nav ml-auto ">
-               <li class="nav-item"><a class="nav-link text-dark" href="" >HOME</a></li>
-               <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
-                href="" id="navbardrop" data-toggle="dropdown">PLANS</a>
-                <div class="dropdown-menu bg-dark">
-                <a class="dropdown-item text-warning" href=plans/endplans.html>Endowment Plans</a>
-                <a class="dropdown-item text-warning" href="#">Money Back Plans</a>
-                <a class="dropdown-item text-warning" href="#">Term Plans</a>
-                <a class="dropdown-item text-warning" href="#">Pension Plans</a>
-                <a class="dropdown-item text-warning" href="#">Health Plans</a>
-                <a class="dropdown-item text-warning" href="#">Child Plans</a>
-</div>
+       <li class="nav-item"><a class="nav-link text-dark" href="/" >HOME</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="../faq" >FAQ</a></li>
 
-
-</li>
-               <li class="nav-item"><a class="nav-link text-dark" href=../Login/index.html >LOGIN PORTAL</a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href=""> FAQ </a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="">CONTACT US</a></li>
-             </ul>
+       {%if user.is_authenticated%}
+       <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+       <li class="nav-item"><a class="btn btn-outline-warning" href="Logout">Logout</a></li>
+       {%else%}
+       <li class="nav-item"><a class="btn btn-outline-warning" href="../Login">Login</a></li>
+       {%endif%}
+     </ul>
 </div>
 </div>
 </nav>
@@ -55,7 +59,7 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="imgBx">
- <a href=JA.html><img src="j.jpg" height=350px width=350px></a>
+ <a href=JA.html><img src="{% static 'planimage/Endowmentimage/j.jpg' %}" height=350px width=350px></a>
 </div>
 <div class="details">
   <h5>JEEVAN ANAND-815</h5>
@@ -63,7 +67,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-  <img src="r.jpg" height=350px width=350px>
+  <img src="{% static 'planimage/Endowmentimage/r.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>JEEVAN RAKSHAK-827</h5>
@@ -71,7 +75,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="l.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/l.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>JEEVAN LAKSHYA-833</h5>
@@ -79,7 +83,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="jl.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/jl.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>JEEVAN LABH-836</h5>
@@ -87,7 +91,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="jp.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/jp.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>JEEVAN PRAGATI-838</h5>
@@ -95,7 +99,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="as.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/as.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>AADHAR STAMBH-843</h5>
@@ -103,7 +107,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
- <img src="asi.jpg" height=350px width=350px>
+ <img src="{% static 'planimage/Endowmentimage/asi.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>AADHAR SHILA-844</h5>
@@ -111,7 +115,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="nv.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/nv.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>NAV JEEVAN-853</h5>
@@ -119,7 +123,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="ne.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/ne.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>NEW ENDOWMENT PLAN-814</h5>
@@ -127,7 +131,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="sne.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/sne.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>SINGLE PREMIUM ENDOWMENT PLAN-817</h5>
@@ -135,7 +139,7 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-   <img src="lpe.jpg" height=350px width=350px>
+   <img src="{% static 'planimage/Endowmentimage/lpe.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>LIMITED PREMIUM ENDOWMENT PLAN-830</h5>
@@ -144,43 +148,27 @@
 
 </div>
 <div class="swiper-pagination"></div>
+<!-- Add Arrows -->
+    <div class="swiper-button-next text-white">
+       </div>
+    <div class="swiper-button-prev text-white" ></div>
 </div>
 
 
 
-   <script type="text/javascript" src="swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-  </script>
-
   <!-- Swiper ends-->
-<br><br>
+
 <section>
 <div>
-
-<b><font size=3 color=white style="font-family: 'Playfair Display', serif;">
+<br /><br /><br />
+<p id="first">
 Endowment plans are a type of life insurance policy, which provides the combined benefit of insurance coverage and savings. Endowment plan helps the insured to save regularly
   over a particular time period in order to avail a lump-sum amount at the maturity of the policy. The maturity amount is paid in case the insured survives the entire tenure of the
-  policy.<br><br />
- However, in case of an unfortunate demise of the insured during the policy tenure, a sum assured amount as death benefit along with bonus (if any) is paid to the beneficiary of the
+  policy.</p>
+ <p>
+  However, in case of an unfortunate demise of the insured during the policy tenure, a sum assured amount as death benefit along with bonus (if any) is paid to the beneficiary of the
   policy.
-<br /><br /><br />
-</font></b>
+</p>
 </div>
 </section>
 <!-- Footer-->
@@ -220,6 +208,31 @@ Endowment plans are a type of life insurance policy, which provides the combined
 
 </div>
 </div>
+<script type="text/javascript" src="{% static 'planjs/swiper.min.js' %}"></script>
+<script>
+ var swiper = new Swiper('.swiper-container', {
+   effect: 'coverflow',
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: 'auto',
+   coverflowEffect: {
+     rotate: 50,
+     stretch: 0,
+     depth: 100,
+     modifier: 1,
+     slideShadows : true,
+   },
+   pagination: {
+     el: '.swiper-pagination',
+     dynamicBullets: true,
+   },
+   navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+ });
+
+</script>
 
 </body>
 </html>

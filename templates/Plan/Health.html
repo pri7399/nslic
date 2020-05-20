@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="swiper.min.css">
-<link rel="stylesheet" type="text/css" href="style1.css">
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/swiper.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/style1.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -19,8 +20,9 @@
 <!-- Navbar-->
   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
    <div class="container">
-      <a href="" class="navbar-brand text-warning font-weight-bold">
-         NSLIC </a>
+     <div class="logo">
+           <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+         </div>
 
        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
        data-target="#collapsenavbar">
@@ -28,25 +30,17 @@
         </button>
      <div class="collapse navbar-collapse text-center" id="collapsenavbar">
 
-     <ul class="navbar-nav ml-auto ">
-               <li class="nav-item"><a class="nav-link text-dark" href="" >HOME</a></li>
-               <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
-                href="" id="navbardrop" data-toggle="dropdown">PLANS</a>
-                <div class="dropdown-menu bg-dark">
-                <a class="dropdown-item text-warning" href=plans/endplans.html>Endowment Plans</a>
-                <a class="dropdown-item text-warning" href="#">Money Back Plans</a>
-                <a class="dropdown-item text-warning" href="#">Term Plans</a>
-                <a class="dropdown-item text-warning" href="#">Pension Plans</a>
-                <a class="dropdown-item text-warning" href="#">Health Plans</a>
-                <a class="dropdown-item text-warning" href="#">Child Plans</a>
-</div>
+       <ul class="navbar-nav ml-auto ">
+                 <li class="nav-item"><a class="nav-link text-dark" href="/" >HOME</a></li>
+                  <li class="nav-item"><a class="nav-link text-dark" href="../faq" >FAQ</a></li>
 
-
-</li>
-               <li class="nav-item"><a class="nav-link text-dark" href=../Login/index.html >LOGIN PORTAL</a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href=""> FAQ </a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="">CONTACT US</a></li>
-             </ul>
+                 {%if user.is_authenticated%}
+                 <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+                 <li class="nav-item"><a class="btn btn-outline-warning" href="Logout">Logout</a></li>
+                 {%else%}
+                 <li class="nav-item"><a class="btn btn-outline-warning" href="../Login">Login</a></li>
+                 {%endif%}
+               </ul>
 </div>
 </div>
 </nav>
@@ -55,7 +49,7 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="imgBx">
- <a href="#"><img src="image/JA.jpg" height=350px width=350px></a>
+ <a href="#"><img src="{% static 'planimage/Healthimage/JA.jpg' %}" height=350px width=350px></a>
 </div>
 <div class="details">
   <h5>JEEVAN AROGYA- 904</h5>
@@ -63,63 +57,32 @@
 </div>
 <div class="swiper-slide">
 <div class="imgBx">
-  <img src="image/CA.jpg" height=350px width=350px>
+  <img src="{% static 'planimage/Healthimage/CA.jpg' %}" height=350px width=350px>
 </div>
 <div class="details">
      <h5>CANCER COVER- 905</h5>
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
 </div>
 <div class="swiper-pagination"></div>
+<!-- Add Arrows -->
+    <div class="swiper-button-next text-dark">
+       </div>
+    <div class="swiper-button-prev text-dark" ></div>
 </div>
-
-
-
-   <script type="text/javascript" src="swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-  </script>
-
   <!-- Swiper ends-->
 <br><br>
 <section>
 <div>
 
-<b><font size=3 color=white style="font-family: 'Playfair Display', serif;">
+<p id="first">
   Health insurance comes at your rescue when you need any medical assistance at any point in time. In case, when you fall sick or ill, meet with an accident and so forth. Having
   a health insurance policy provides cover for the expenses incurred and provides additional benefits as well.It safeguards in case of any unexpected high medical expenses.
-  <br /><br />
-    A medical emergency can happen anywhere, anytime and it can easily put you in stress and drain you both financially and emotionally, therefore, it becomes important for every individual to buy a good health insurance policy that includes
+  </p>
+    <p>A medical emergency can happen anywhere, anytime and it can easily put you in stress and drain you both financially and emotionally, therefore, it becomes important for every individual to buy a good health insurance policy that includes
     benefits such as hospitalisation expense cover,medication and laboratory test costs, including critical illness and many. Some health plans also cover OPD expenses up to a certain limit.
-  
-
-<br /><br />
-</font></b>
+</p>
 </div>
 </section>
 <!-- Footer-->
@@ -159,6 +122,31 @@
 
 </div>
 </div>
+<script type="text/javascript" src="{% static 'planjs/swiper.min.js' %}"></script>
+<script>
+ var swiper = new Swiper('.swiper-container', {
+   effect: 'coverflow',
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: 'auto',
+   coverflowEffect: {
+     rotate: 50,
+     stretch: 0,
+     depth: 100,
+     modifier: 1,
+     slideShadows : true,
+   },
+   pagination: {
+     el: '.swiper-pagination',
+     dynamicBullets: true,
+   },
+   navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+ });
+
+</script>
 
 </body>
 </html>
