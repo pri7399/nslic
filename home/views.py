@@ -31,6 +31,9 @@ def Login(request):
 def User(request):
    return render(request, 'User.html')
 
+def faq(request):
+    return render(request, 'faq.html')
+
 
 def pupload(request):
     info=request.user.profile
