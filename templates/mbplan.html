@@ -1,0 +1,155 @@
+{% load static %}
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="{% static 'Homecss/Home.css' %}">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap');
+
+     .footer #sintro h3{
+     color:white;
+     }
+  .card{
+    margin-right:10px;
+    margin-left:10px;
+    height:250px;
+    background: #009578;
+    margin-top:50px;
+  }
+.card .btn{
+  font-size:130px;
+  width:900px;
+  font-family: 'Playfair Display SC', serif;
+}
+{
+
+}
+
+
+</style>
+
+</head>
+<body>
+<!-----navbar starts---->
+  <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+   <div class="container">
+     <div class="logo">
+           <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+         </div>
+
+<div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+</div>
+<ul class="nav-links text-center mt-10">
+      <li><a href="/">Home</a></li>
+      <li><a href="../faq">FAQ</a></li>
+      {%if user.is_authenticated%}
+      <li><a href="Logout" class="btn btn-outline-warning text-danger">Logout</a></li>
+      {%else%}
+      <li><a href="../Login" class="btn btn-outline-warning text-danger">Login</a></li>
+      {%endif%}
+</ul>
+</div>
+</nav><br />
+<br /><br /><br />
+
+  <div class="card">
+    <div class="card-body">
+      <a class="btn btn-warning text-white" href="../EndowmentPlan/endplans.html">Endowment</a>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <a class="btn btn-danger " href="../MoneyBack/MoneyBack.html">Money Back</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+    <a class="btn btn-info " href="../HealthPlan/Health.html">Health</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+    <a class="btn btn-success " href="../ChildPlan/Child.html">Child</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <a class="btn btn-primary " href="../Pensionplan/Pension.html">Pension</a>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="p-5 bg-info footer">
+          <div class="container">
+  	       <div class="row">
+  		<div class="col-ms-6 " id="sintro">
+  			<h3><strong>CONTACT</strong></h3>
+        <br />
+  		        <strong class="footertext  nam">NSLIC</strong>
+                          <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> LIC India,</strong></p>
+  		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+
+                          <p><strong>EMAIL  ID:-</strong><br>
+  			<a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
+                          </p>
+                     </div>
+
+                     <div class="col-ms-6" id="oads">
+                        <br>
+                          <h4><strong>Aurangabad Branch Office</strong></h4>
+                          <p>Chandel Niwas,Maharajganj Road<br>
+                          Aurangabad-824101</p>
+                          <p>Contact-1800-33-4433</p>
+                     </div>
+  </div>
+  <div class="copyright">
+  <div class="footer-bottom">
+  		<div class="container">
+  			<div class="col-xs-12 bg-dark text-white">
+  				<center><p>All Rights Reserved &#169; 2019  www.nslic.in</p></center>
+  			</div>
+  </div>
+  </div>
+
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+<script>
+const hamburger= document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+
+  });
+</script>
+
+</body>
+</html>
