@@ -5,6 +5,9 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('', views.home, name="Home"),
     path('Home/', views.home, name="Home"),
+    path('faq/', views.faq,name="faq"),
+    path('faq/Login', views.Login ),
+    path('faq/Logout', views.Logout ),
 
     path('Login/Home/Logout', views.home, name="Home"),
     path('Login/', views.Login ,name='Login'),
