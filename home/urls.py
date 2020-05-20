@@ -8,6 +8,13 @@ urlpatterns = [
     path('faq/', views.faq,name="faq"),
     path('faq/Login', views.Login, name='Login'),
     path('faq/Logout', views.Logout,name='Logout'),
+    
+    path('mbplan/', views.mbplan,name="mbplan"),
+
+    path('EndowmentPlan/faq', views.faq ),
+    path('ChildPlan/faq', views.faq ),
+    path('MoneyBack/faq', views.faq ),
+
 
     path('Login/Home/Logout', views.home, name="Home"),
     path('Login/', views.Login ,name='Login'),
