@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 body
 {
       background-image:url(b1.jpg);
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
       background-size:cover;
-      margin: 0;
-      padding:0;
 
-
-   }
-
+}
+.navbar .logo img{
+  height:40px;
+  width:100px;
+}
    .navbar {
      min-height: 25px;
 
@@ -34,12 +35,18 @@ body
    .footer #sintro h3{
    color:white;
    }
-
+   h1{
+   margin-top:20px;
+   font-family: 'Abril Fatface', cursive;
+   font-size:65px;
+   color:#DAA520;
+   margin-right:150px;
+   }
 .swiper-container
 {
       width: 100%;
-      padding-top: 130px;
-      padding-bottom: 60px;
+      padding-top: 80px;
+      padding-bottom: 50px;
     }
 .swiper-slide
 {
@@ -48,13 +55,82 @@ body
       width: 350px;
       height: 350px;
       background:#fff;
+      border: 3px solid white;
     }
 .swiper-container .swiper-slide .details{
 color:rgb(255,215,0);
 font-weight:bold;
 font-style:italic;
+font-family: 'Abril Fatface', cursive;
 }
-.swiper-container section p{
-font-style:'Playfair Display', serif;
-font-size:6px;
+section p{
+font-family: 'Barlow Condensed', sans-serif;
+font-size:25px;
+color:white;
+}
+@media(min-width:992px){
+.swiper-container .swiper-button-next{
+    display:none;
+  }
+  .swiper-container .swiper-button-prev{
+    display:none;
+  }
+}
+
+@media(max-width:992px){
+body
+  {
+        background-image:url(b1.jpg);
+        background-size:cover;
+        margin: 0;
+        padding:0;
+}
+    section #first{
+      font-size:20px;
+      margin-top:-30px;
+      margin-left:10px;
+    }
+    section p{
+      font-size:20px;
+      margin-left:10px;
+    }
+    .swiper-slide
+    {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    .footer #sintro h3{
+      font-size:50px;
+      }
+      .footer #sintro p{
+        font-size:15px;
+        }
+        .footer #sintro .nam{
+          font-size:45px;
+          }
+          .footer #sintro {
+            padding:5px 0px 0px 5px;
+            }
+
+        .footer #oads h4{
+            font-size:20px;
+            }
+            .footer #oads p{
+              font-size:15px;
+              }
+
+
+    .footer #oads{
+        padding:5px 0px 0px 5px;
+           }
+    .footer .copyright p{
+      font-size: 10px;
+
+    }
+    .footer .copyright{
+      padding: 5px 0px 0px 0px;
+    }
+
+
 }
