@@ -26,6 +26,9 @@ def Login(request):
     else:
         return render(request, 'Login.html')
 
+    
+def mbplan(request):
+    return render(request, 'mbplan.html')
 
 
 def User(request):
