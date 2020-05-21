@@ -48,7 +48,11 @@
         <li><a href="/">Home</a></li>
         <li><a href="mbplan">Plans</a></li>
         <li><a href="faq">FAQ</a></li>
-        <li><a href="Login" class="text-danger">Login</a></li>
+        {%if user.is_authenticated%}
+      <li><a href="Logout" class="btn btn-outline-warning text-danger">Logout</a></li>
+      {%else%}
+      <li><a href="../Login" class="btn btn-outline-warning text-danger">Login</a></li>
+      {%endif%}
      </ul>
 </div>
 </nav>
