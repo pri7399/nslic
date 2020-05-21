@@ -82,16 +82,16 @@ def Logout(request):
 
 
 def Child(request):
-    return render(request, 'plan/Child.html')
+    return render(request, 'Child.html')
 
 def Endowment(request):
-    return render(request, 'plan/endplans.html')
+    return render(request, 'endplans.html')
 
 def Health(request):
-    return render(request, 'plan/Health.html')
+    return render(request, 'Health.html')
 
 def MoneyBack(request):
-    return render(request, 'plan/MoneyBack.html')
+    return render(request, 'MoneyBack.html')
 
 def Pension(request):
-    return render(request, 'plan/Pension.html')
+    return render(request, 'Pension.html')
