@@ -28,9 +28,12 @@
   width:900px;
   font-family: 'Playfair Display SC', serif;
 }
-{
 
-}
+  .nav-links.open {
+    clip-path: circle(680px at 90% 0%);
+    -webkit-clip-path: circle(680px at 90% 0%);
+    pointer-events: all ;
+  }
 
 
 </style>
@@ -50,8 +53,7 @@
       <div class="line"></div>
 </div>
 <ul class="nav-links text-center mt-10">
-      <li class="text-white"><a class="text-white" href="#">Home</a></li>     
-       <li><a href="/">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="../faq">FAQ</a></li>
       {%if user.is_authenticated%}
       <li><a href="Logout" class="btn btn-outline-warning text-danger">Logout</a></li>

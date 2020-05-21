@@ -104,20 +104,33 @@
 }
 
 @media(max-width:991px){
+
+  .nav-links.open {
+    clip-path: circle(700px at 90% 0%);
+    -webkit-clip-path: circle(700px at 90% 0%);
+    pointer-events: all ;
+  }
+
   #pc{
         display:none;
       }
-  #mb h1{
-      margin-top:80px;
-      margin-left: 300px;
+  #mb #head{
+      margin-top:90px;
+      margin-left:30px;
+      margin-bottom: 40px;
+      font-family: 'Abril Fatface', cursive;
+      display:inline;
+      font-size:55px;
+      color:#DAA520;
+      display:block;
 
       margin-right:0px;
       }
 
   .faq .card{
-    margin-left:50px;
+    margin-left:30px;
     background: #009578;
-    width:1300px;}
+    width:915px;}
 .faq #headingOne{
   height:250px;
   font-family: 'Playfair Display SC', serif;
@@ -134,19 +147,19 @@
 .faq #collapseOne .card-body{
   height:1300px;
   background-color: white;
-  font-size:50px;
+  font-size:40px;
   font-family: 'PT Sans Narrow', sans-serif;
 }
 .faq #collapseOne .card-body p{
   font-family: 'Crete Round', serif;
-  font-size:60px;
+  font-size:50px;
 }
 .faq #collapseOne .card-body h5{
   font-family: 'Anton', sans-serif;
   font-size:50px;
 }
 .faq #headingTwo{
-  height:250px;
+  height:320px;
   font-family: 'Playfair Display SC', serif;
 }
 .faq #collapseTwo .card-body{
@@ -155,21 +168,21 @@
 
 }
 .faq #collapseTwo .card-body p{
-  font-size:50px;
+  font-size:40px;
   font-family: 'PT Sans Narrow', sans-serif;
 }
 
 
 .faq #collapseTwo .card-body #pass{
   font-family: 'Crete Round', serif;
-  font-size:60px;
+  font-size:50px;
 }
 .faq #collapseTwo .card-body h6{
   font-family: 'Anton', sans-serif;
   font-size:50px;
 }
 .faq .card-header{
-  height:250px;
+  height:320px;
   font-family: 'Playfair Display SC', serif;
 }
 .faq .card-body{
@@ -180,18 +193,19 @@
 }
 .faq  .card-body p{
   font-family: 'Crete Round', serif;
-  font-size:60px;
+  font-size:50px;
 }
 .faq  .card-body h6{
   font-family: 'Anton', sans-serif;
   font-size:50px;
 }
 .faq #headingFour{
-  height:330px;
+  height:430px;
 }
 .faq #headingFive{
   height:250px;
 }
+
 .faq #collapseFive .card-body{
   height:460px;
   background-color: white;
@@ -199,18 +213,19 @@
   font-family: 'PT Sans Narrow', sans-serif;
 }
 .faq #collapseSix .card-body{
-  height:820px;
+  height:800px;
 
 }
 .faq #collapseSeven .card-body{
-  height:820px;
+  height:800px;
 
 }
 .footer{
-  width:1300px;
-  margin-left:50px;}
+  width:915px;
+  margin-left:30px;}
 
 }
+
 </style>
   <!----faq css ends---->
 </head>
@@ -252,9 +267,9 @@
       </div>
      <ul class="nav-links text-center mt-10">
         <li><a href="/">Home</a></li>
-        <li><a href="#">Plans</a></li>
+        <li><a href="../mbplan">Plans</a></li>
         {%if user.is_authenticated%}
-      
+
         <li><a href="Logout" class="btn btn-outline-warning text-danger">Logout</a></li>
         {%else%}
         <li><a href="Login" class="btn btn-outline-warning text-danger">Login</a></li>
@@ -392,7 +407,7 @@
 <!-----FAQ mobile starts---->
 <div class="faq" id="mb">
 
-  <h1 align="center">FREQUENTLY ASKED QUESTION</h1>
+  <p id="head">FREQUENTLY ASKED QUESTION</p>
   <div id="accordion">
     <div class="card">
       <div class="card-header" id="headingOne">
@@ -565,10 +580,10 @@
       <br />
 		        <strong class="footertext  nam">NSLIC</strong>
                         <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br> LIC India,</strong></p>
-		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)<br></p>
+		        <p><strong>MOBILE NO - 9931431069(WHATSAPP NUM.)</p>
 
-                        <p><strong>EMAIL  ID:-</strong><br>
-			<a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
+                        <p><strong>EMAIL  ID:-</strong>
+			<a href="mailto:'nslic86@gmail.com'" class="text-dark">nslic86@gmail.com</a>
                         </p>
                    </div>
 
