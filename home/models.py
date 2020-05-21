@@ -28,7 +28,10 @@ class profile(models.Model):
     maxloan=models.IntegerField()
 
     npreceipt = models.FileField(upload_to='recipts/')
-
+    revival = models.FileField(null=True, blank=True, upload_to='revival/')
+    details = models.FileField(null=True, blank=True, upload_to='details/')
+    revival = models.BooleanField(default="True")
+    bond_given = models.BooleanField(default="True")
 
     age=models.IntegerField()
     dob=models.DateField(blank="ture")
@@ -42,7 +45,8 @@ class profile(models.Model):
 
     ppic=models.ImageField(default='default.jpg' , upload_to='profile_pics')
     bpic=models.ImageField(default='default1.jpg' , upload_to='bond_pics')
-
+    adrfpic=models.ImageField(default='defaultaf.jpg' , upload_to='adr_pics')
+    adrbic=models.ImageField(default='defaultab.jpg' , upload_to='adr_pics')
 
     def __str__(self):
         return self.pname
