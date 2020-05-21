@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Child Plans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/swiper.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plancss/style1.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<!-- Navbar-->
+  <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+   <div class="container">
+     <div class="logo">
+           <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+         </div>
+
+       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+       data-target="#collapsenavbar">
+       <span class="navbar-toggler-icon"> </span>
+        </button>
+     <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+
+     <ul class="navbar-nav ml-auto ">
+               <li class="nav-item"><a class="nav-link text-dark" href="/" >HOME</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="../faq" >FAQ</a></li>
+
+               {%if user.is_authenticated%}
+               <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+               <li class="nav-item"><a class="btn btn-outline-warning" href="Logout">Logout</a></li>
+               {%else%}
+               <li class="nav-item"><a class="btn btn-outline-warning" href="Login">Login</a></li>
+               {%endif%}
+             </ul>
+</div>
+</div>
+</nav>
+<!-- Swiper Begins-->
+
+<div class="swiper-container">
+<div class="swiper-wrapper">
+  <div class="swiper-slide">
+  <div class="imgBx">
+     <img src="{% static 'planimage/Childimage/CP.jpg' %}" height=350px width=350px>
+  </div>
+  <div class="details">
+       <h5>NEWCHILDREN'S MONEY BACK -932</h5>
+  </div>
+  </div>
+
+  <div class="swiper-slide">
+  <div class="imgBx">
+     <img src="{% static 'planimage/Childimage/JT.jpg' %}" height=350px width=350px>
+  </div>
+  <div class="details">
+       <h5>JEEVAN TARUN-934</h5>
+  </div>
+  </div>
+  <div class="swiper-slide">
+  <div class="imgBx">
+     <img src="{% static 'planimage/Childimage/SP.jpg' %}" height=350px width=350px>
+  </div>
+  <div class="details">
+       <h5>SINGLE PREMIUM ENDOWMENT PLAN-817</h5>
+  </div>
+  </div>
+
+</div>
+<div class="swiper-pagination"></div>
+<!-- Add Arrows -->
+    <div class="swiper-button-next text-white">
+       </div>
+    <div class="swiper-button-prev text-white" ></div>
+</div>
+<!-- Swiper ends-->
+<br><br>
+<section>
+<div>
+
+<p id="first">
+Child Plan is insurance cum investment plan that kills two birds with one stone, i.e. financially
+securing your kid's future and financing the decisive moments in your kid's life like higher education and marriage. A wsie man said-"Your child will keep building castles in the air; you better start buying bricks for those castles today."
+</p>
+
+<p>
+  Loving your child is what comes naturally, but as a responsible parent, you have certain obligations towards your child. Getting a child plan is one such obligation; in fact,
+   the most important one. If you are reading this, you've already proved that you are a concerned parent finding ways to secure your child's future. Let us help you in understanding
+   what exactly a child plan is and let you go for the best one.</p>
+ </div>
+</section>
+<!-- Footer-->
+<div class="p-5 bg-info footer">
+      <div class="container">
+       <div class="row">
+  <div class="col-ms-6 " id="sintro">
+    <h3><strong>Contact</strong></h3>
+    <br />
+          <strong class="footertext">NSLIC</strong>
+                      <p><strong>Narendra Kumar Singh<br>The Chairman Club Member <br>LIC India</strong></p>
+          <p><strong>MOBILE NO - 9931431069<br></p>
+
+                      <p><strong>EMAIL  ID:-</strong><br>
+    <a href="mailto:'nslic86@gmail.com'" >nslic86@gmail.com</a>
+                      </p>
+                 </div>
+
+                 <div class="col-ms-6" id="oads">
+                    <br>
+                      <h4><strong>Aurangabad Branch Office</strong></h4>
+                      <p>Chandel Niwas,Maharajganj Road<br>
+                      Aurangabad</p>
+                      <p>Contact-1800-33-4433</p>
+                 </div>
+</div>
+<div class="copyright">
+<div class="footer-bottom">
+  <div class="container">
+    <div class="col-xs-12 bg-dark text-white">
+      <center><p>All Rights Reserved &#169; 2019  www.nslic.in</p></center>
+    </div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="{% static 'planjs/swiper.min.js' %}"></script>
+<script>
+ var swiper = new Swiper('.swiper-container', {
+   effect: 'coverflow',
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: 'auto',
+   coverflowEffect: {
+     rotate: 50,
+     stretch: 0,
+     depth: 100,
+     modifier: 1,
+     slideShadows : true,
+   },
+   pagination: {
+     el: '.swiper-pagination',
+     dynamicBullets: true,
+   },
+   navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+ });
+
+</script>
+
+</body>
+</html>
