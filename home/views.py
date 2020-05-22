@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.contrib.auth.models import User , auth
 from django.contrib import messages
 from .models import *
-from .forms import PpicForm,BpicForm
+from .forms import PpicForm,BpicForm,AdrpicForm
 
 
 
