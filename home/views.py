@@ -40,7 +40,6 @@ def faq(request):
 
 def pupload(request):
     info=request.user.profile
-    i_form = PpicForm(instance=info)
     if request.method =='POST':
         i_form = PpicForm(request.POST, request.FILES,instance=info)
         if i_form.is_valid():
@@ -57,7 +56,6 @@ def pupload(request):
 
 def bond(request):
     info=request.user.profile
-    b_form = BpicForm(instance=info)
     if request.method =='POST':
         b_form = BpicForm(request.POST, request.FILES,instance=info)
         if b_form.is_valid():
@@ -70,7 +68,19 @@ def bond(request):
         print("non-post")
         return render(request, 'bondpic.html')
    
+def adrupload(request):
+    info=request.user.profile
 
+    if request.method =='POST':
+        t_form = AdrpicForm(request.POST, request.FILES,instance=info)
+        if t_form.is_valid():
+            t_form.save()
+            context = {'form' : t_form}
+            return render(request, 'adrpic.html',context)
+
+    else:
+        print("non-post")
+        return render(request, 'adrpic.html')
 
 
 def Logout(request):
