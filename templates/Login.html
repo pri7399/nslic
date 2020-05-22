@@ -20,8 +20,9 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
  <div class="container">
-		<a class="navbar-brand text-warning font-weight-bold ">
-			 NSLIC </a>
+	 <div class="logo">
+				 <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+			 </div>
 
 		 <button class="navbar-toggler" type="button" data-toggle="collapse"
 		 data-target="#collapsenavbar">
@@ -30,23 +31,20 @@
 	 <div class="collapse navbar-collapse text-center" id="collapsenavbar">
 
 	 <ul class="navbar-nav ml-auto text-center">
-						 <li class="nav-item"><a class="nav-link text-dark" href="/">HOME</a></li>
-						 <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
-							href="" id="navbardrop" data-toggle="dropdown">PLANS</a>
-					<div class="dropdown-menu bg-dark ">
-							<a class="dropdown-item text-warning" href="#">Endowment Plans</a>
-							<a class="dropdown-item text-warning" href="#">Money Back Plans</a>
-							<a class="dropdown-item text-warning" href="#">Term Plans</a>
-							<a class="dropdown-item text-warning" href="#">Pension Plans</a>
-							<a class="dropdown-item text-warning" href="#">Health Plans</a>
-							<a class="dropdown-item text-warning" href="#">Child Plans</a>
-					</div></li>
+						 <li class="nav-item"><a class="nav-link text-dark text-center" href="/">HOME</a></li>
+						 {%if user.is_authenticated%}
+						 <li class="nav-item"><a class="nav-link  text-dark text-center" href="">Hello, {{ user.profile.pname }} </a></li>
+						 <li class="nav-item"><a class="btn btn-outline-warning text-center" href="Logout">Logout</a></li>
+						 {%else%}
+						 <li class="nav-item"><a class="btn btn-outline-warning text-center" href="Login">Login</a></li>
+						 {%endif%}
 
-
-						<li class="nav-item"><a class="nav-link text-dark" href="">FAQ</a></li>
-						 <li class="nav-item"><a class="nav-link text-dark" href="">CONTACT US</a></li>
-            
 					 </ul>
+
+
+
+
+			</ul>
 </div>
 </div>
 </nav>
