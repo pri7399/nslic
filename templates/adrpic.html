@@ -57,17 +57,21 @@
     </style>
 </head>
 <body>
-  <h3 align="Center">Current Profile Image</h3>
+  <h3 align="Center">Current Aadar Picture</h3>
   <div class="row ad">
     <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
-      <img src="{{ user.profile.ppic.url }}" height="300px" width="490px"/>
+      <img src="{{ user.profile.adrfpic.url }}" height="300px" width="490px"/>
   </div>
+  <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto tw">
+    <img src="{{ user.profile.adrbic.url }}" height="300px" width="490px"/>
+  </div>
+
   </div>
     <form method = "POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-outline-danger" type="submit">Upload</button>
-        <a href=User class="btn btn-outline-danger" >
+        <button class="btn btn-outline-info" type="submit">Upload</button>
+        <a href=User class="btn btn-outline-info" >
         Profile</a>
     </form>
 </body>

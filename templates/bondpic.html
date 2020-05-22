@@ -24,17 +24,51 @@
       form{
         position:center;
         margin-top:50px;
-        magin-left:200px;
+        margin-left:600px;
+      }
+      .ad img{
+        width:250px;
+        margin-left:230px;
+        width:400px;
+        height:350px;
+        margin-top:20px;
+        border: 2px solid black;
+      }
+      @media(max-width:991px)
+      {
+        .ad img{
+          width:250px;
+          margin-left:40px;
+          height:250px;
+          margin-top:30px;
+          border: 2px solid black;
+        }
+        .ad .tw img{
+          width:250px;
+         margin-bottom:20px;
+           border: 2px solid black;
+        }
+        form{
+          position:center;
+          margin-top:50px;
+          margin-left:30px;
+        }
       }
     </style>
 </head>
 <body>
+  <h3 align="Center">Current Bond Image</h3>
+  <div class="row ad">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+      <img src="{{ user.profile.bpic.url }}" height="300px" width="490px"/>
+  </div>
+  </div>
     <form method = "POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-outline-info" type="submit">Upload</button>
         <a href=User class="btn btn-outline-info" >
-        Back</a>
+        Profile</a>
     </form>
 </body>
 </html>

@@ -16,7 +16,7 @@
   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
   <div class="container">
     <div class="logo">
-          <a href="#"><img src="{% static 'Homeimage/Logo.png' %}" alt="logo" /></a>
+          <a href="#"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
         </div>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
       data-target="#collapsenavbar">
@@ -29,9 +29,9 @@
 
               {%if user.is_authenticated%}
               <li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
-              <li class="nav-item"><a class="btn btn-outline-warning fa-2x" href="Logout">Logout</a></li>
+              <li class="nav-item"><a class="btn btn-outline-warning " href="Logout">Logout</a></li>
               {%else%}
-              <li class="nav-item"><a class="btn btn-outline-warning fa-2x" href="Login">Login</a></li>
+              <li class="nav-item"><a class="btn btn-outline-warning " href="Login">Login</a></li>
               {%endif%}
 
             </ul>
@@ -75,11 +75,12 @@
                 <h4>  {{user.profile.dop}} </h4>
 
               </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
-                    <h6> Next Premium Amount-</h6>
-                   <h4>  &#x20b9; {{user.profile.npamount}}.0 </h4>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block ml-0">
+                <h6> Next Premium Amount-</h6>
+               <h4>  &#x20b9; {{user.profile.npamount}}.0 </h4>
 
-              </div>
+          </div>
+
 
             </div>
 
@@ -114,7 +115,7 @@
    <h4 align="center">D.O.B-{{user.profile.dob}}</h4>
 
  </div>
-
+      {%if user.profile.revival == 1 %}
       <div class="card card-body py-5">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
@@ -127,8 +128,29 @@
       </div>
     </div>
 
+
         </div>
+        {% else%}
+        <div class="card card-body py-5 rev">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4 d-block m-auto">
+          <h3>  {{user.profile.pstatus}} </h3>
+          <h6>   Policy status</h6>
+        </div>
+            <div class="col-lg-8 col-md-10 col-sm-10 col-10 d-block m-auto rev1">
+        <p>
+          Your policy have been lapsed due to non-payment of premium under Grace period. You wll need to revive it
+          ,otherwise it will be closed automatically after sometimes and the money you deposited will be lost.
+          Look into the revival quotation for the amount<font color="red">(GST not included)</font> that you need to revive the policy.
+        </p>
+        <a class="btn btn-outline-info" href="{{ user.profile.npreceipt.url }}" >Revival Quotation</a>
+        </div>
+      </div>
+
+          </div>
         <hr>
+        {%endif%}
+        <hr />
   <!-- Animation from youtube start -->
 <div class="box">
 <div class="inner">
@@ -213,7 +235,7 @@
 <hr />
 <div class="row mal">
   <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto">
-    <img src="{{ user.profile.bpic.url }}" height="600px" width="600px"/>
+    <img src="{{ user.profile.bpic.url }}" height="600px" width="590px"/>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-block m-auto">
 <p>
@@ -226,18 +248,45 @@
 <hr />
 </div>
 <hr />
+<hr />
+<div class="col-12 text-center bp">
+  <h2 class="heading">Aadar Card</h2>
+
+</div>
+<hr />
+<div class="row ad">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto">
+    <img src="{{ user.profile.adrfpic.url }}" height="300px" width="490px"/>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12 col-12 d-block m-auto tw">
+  <img src="{{ user.profile.adrbic.url }}" height="300px" width="490px"/>
+</div>
+
+</div>
+
+<div class="ad1" >
+<p>
+   If it is not your aadhar card then please update it here, otherwise ignore this text.
+</p>
+<a href="adrupload" class="btn btn-outline-info">
+  Update Aadhar </a>
+</div>
+
+<hr />
+
+<hr />
 </div>
 
     <!-- Premium Paid -->
     <div id="home1" class="collapse">
-      <div class="card card-body bg-danger text-white py-5">
-        <h2>Premium Paying Term</h2>
-        <h4 >{{user.profile.prempayterm}}</h4>
+      <div class="card card-body bg-danger text-white text-center py-5">
+        <h2>Premium Paying Term- {{user.profile.prempayterm}} years</h2>
+
       </div>
 
       <div class="card card-body py-5">
         <h3>Installment Premium Amount</h3>
-        <p>&#x20b9; {{user.profile.npamount}}/- </p>
+        <h5>&#x20b9; {{user.profile.npamount}}/- </h5>
         <br /><br />
         <div class="card-deck">
           <div class="card">
@@ -284,6 +333,12 @@
 
           </div>
         </div>
+        <br /><br />
+        <div class="text-center" >
+          <h5>Last year premium paid statement</h5>
+        <a class="btn btn-outline-info" href="{{ user.profile.npreceipt.url }}" >Premium Paid Staement</a>
+
+    </div>
       </div>
     </div>
     <!-- PAY ONLINE -->
