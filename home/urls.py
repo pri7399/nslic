@@ -22,6 +22,7 @@ urlpatterns = [
     path('Login/Login', views.Login ,name='Login'),
     path('Login/User', views.User ,name='User'),
     path('Login/Pupload', views.pupload ,name='pupload'),
+    path('Login/adrupload', views.adrupload ,name='adrupload'),
 
     path('Logout/', views.Logout,name='Logout'),
     path('Login/Logout/', views.Logout,name='Logout'),
