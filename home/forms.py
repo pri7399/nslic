@@ -13,3 +13,7 @@ class BpicForm(ModelForm):
     class Meta:
         model= profile
         fields=['bpic']
+class AdrpicForm(ModelForm):
+    class Meta:
+        model= profile
+        fields=['adrfpic','adrbic']
