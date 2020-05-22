@@ -72,6 +72,7 @@ color:white;
 
 .box{
  display:flex;
+ margin-left:60px;
 }
 .inner{
  width:450px;
@@ -142,10 +143,25 @@ color:white;
   font-family: 'Cormorant Garamond', serif;
   font-size:20px;
 }
+.ad1 p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:20px;
+  margin-left:250px;
+}
 .mal .btn{
   margin-left:80px;
 }
-
+.ad1 .btn{
+  margin-left:450px;
+}
+#home .rev p{
+  margin-top:20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size:18px;
+}
+#home .rev .btn{
+  margin-left:150px;
+}
 
 
 
@@ -284,7 +300,7 @@ color: #6c757d !important;
 
 /**media queery---for responsive**/
 
-@media(min-width:992px) {
+@media(min-width:991px) {
 
 	.box{
 	 display:flex;
@@ -382,14 +398,14 @@ color: #6c757d !important;
 
 
   .navbar {
-      min-height:90px;
+      min-height:40px;
   }
   .navbar .logo img{
-    height:80px;
+    height:40px;
     width:300px;
   }
   .navbar .navbar-toggler{
-    height:70px;
+    height:40px;
   }
   .navbar .navbar-nav{
     height:350px;
@@ -397,8 +413,11 @@ color: #6c757d !important;
   .navbar .navbar-nav li{
   font-size:30px;
   padding-top:30px;
+}
+.navbar .navbar-nav li .btn{
+  font-size:70px;
+}
 
-  }
 
 
 
@@ -407,14 +426,14 @@ color: #6c757d !important;
     height:110px;
   }
   #main-header {
-    width: 600px;
+    width: 605px;
 
   }
   #home, #home1 , #pay , #contact {
-    width:585px;
+    width:590px;
   }
   .footer{
-    width:585px;
+    width:590px;
 }
 
 	#home .ourservices{
@@ -438,12 +457,35 @@ color: #6c757d !important;
     .mal .btn{
       margin-left:200px;
     }
+    .ad img{
+      margin-left:40px;
+      height:250px;
+      margin-top:30px;
+    }
+    .ad .tw img{
+     margin-bottom:20px;
+    }
+    .ad1 .btn{
+      margin-left:200px;
+    }
+    .ad1 p{
+      font-family: 'Cormorant Garamond', serif;
+      font-size:25px;
+      margin-left:30px;
+    }
   #main-header #button{
       margin-left:190px;
 
   }
+  #home .rev p{
+    font-family: 'Cormorant Garamond', serif;
+    font-size:25px;
+  }
 
-
+  .box{
+   display:flex;
+   margin-left:0px;
+  }
 
 
 
