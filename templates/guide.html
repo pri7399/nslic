@@ -1,0 +1,101 @@
+{% load static %}
+<html>
+<head>
+<title>User Guide</title>
+<link rel="stylesheet" type="text/css" href="{% static 'Homecss/Home.css' %}">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<script type=”text/javascript” src=”//cdn.jsdelivr.net/afterglow/latest/afterglow.min.js”></script>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap');
+  .vid iframe{
+    margin-left:120px;
+    margin-top:50px;
+
+    height:500px;
+    width:1280px;
+  }
+
+
+  @media(max-width:991px)
+  {
+   .vid iframe{
+     margin-left:20px;
+
+     height:1570px;
+     width:940px;
+   }
+
+ }
+
+</style>
+
+</head>
+<body>
+<!-----navbar starts---->
+<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+ <div class="container">
+   <div class="logo">
+         <a href="/"><img src="{% static 'Homeimage/logo.png' %}" alt="logo" /></a>
+       </div>
+     <div class="collapse navbar-collapse" >
+   <ul class="navbar-nav ml-auto ">
+             <li class="nav-item"><a class="nav-link text-dark" href="/" >Home</a></li>
+             <li class="nav-item dropdown"><a class="nav-link dropdown-taggle text-dark"
+              href="" id="navbardrop" data-toggle="dropdown">Plans</a>
+              <div class="dropdown-menu bg-dark">
+              <a class="dropdown-item text-warning" href=../Plan/EndowmentPlan/endplans.html>Endowment Plans</a>
+              <a class="dropdown-item text-warning" href=../Plan/MoneyBack/MoneyBack.html>Money Back Plans</a>
+              <a class="dropdown-item text-warning" href=../Plan/TermPlan/Term.html>Term Plans</a>
+              <a class="dropdown-item text-warning" href=../Plan/Pensionplan/Pension.html>Pension Plans</a>
+              <a class="dropdown-item text-warning" href=../Plan/HealthPlan/Health.html>Health Plans</a>
+              <a class="dropdown-item text-warning" href=../Plan/ChildPlan/Child.html>Child Plans</a>
+</div>
+</li>
+
+{%if user.is_authenticated%}
+<li class="nav-item"><a class="nav-link  text-dark " href="">Hello, {{ user.profile.pname }} </a></li>
+<li class="nav-item"><a class="btn btn-outline-warning" href="Logout">Logout</a></li>
+{%else%}
+<li class="nav-item"><a class="btn btn-outline-warning" href="Login">Login</a></li>
+{%endif%}
+</ul>
+   </div>
+
+   <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+   <ul class="nav-links text-center mt-10">
+      <li><a href="/">Home</a></li>
+      <li><a href="../mbplan">Plans</a></li>
+      {%if user.is_authenticated%}
+
+      <li><a href="Logout" class="btn btn-outline-warning text-danger">Logout</a></li>
+      {%else%}
+      <li><a href="Login" class="btn btn-outline-warning text-danger">Login</a></li>
+      {%endif%}
+
+   </ul>
+</div>
+</nav><br />
+<div class="vid">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x2yz-2Sr5-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+
+<script>
+
+</script>
+  </body>
+</html>
