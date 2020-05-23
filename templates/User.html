@@ -115,7 +115,7 @@
    <h4 align="center">D.O.B-{{user.profile.dob}}</h4>
 
  </div>
-      {%if user.profile.revival == 1 %}
+      {%if user.profile.revival == 0 %}
       <div class="card card-body py-5">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-block m-auto">
@@ -209,6 +209,7 @@
     <h2 class="heading text-warning">LOAN </h2>
 
   </div>
+  {% if user.profile.loanavl == 1 %}
   <div class="text-danger ml">
 
   <h4 >You Can get a maximum loan of &#x20b9;{{user.profile.maxloan}}.0 on this policy.</h4>
@@ -224,6 +225,14 @@
   with the original policy document.Once the details of the application are verified, a loan amount of up to 90% of the surrender value of the policy
   is paid out. In case your policy is eligible for loan, then contact us, you will make all arrangements for you to get the loan.
 </p>
+
+{% else %}
+<div class="text-danger ml">
+
+<h4 >You can't get a loan under this policy as it is {{user.profile.plantype}} type policy and loan
+  facility is only for Endowment type plans.</h4>
+</div>
+{% endif %}
 </div>
 
 
