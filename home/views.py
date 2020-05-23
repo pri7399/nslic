@@ -8,6 +8,8 @@ from .forms import PpicForm,BpicForm,AdrpicForm
 
 def home(request):
     return render(request, 'Home.html')
+def guide(request):
+    return render(request, 'guide.html')
 
 def Login(request):
     if request.method== 'POST':
