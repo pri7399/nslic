@@ -15,7 +15,7 @@ urlpatterns = [
     path('ChildPlan/faq', views.faq ),
     path('MoneyBack/faq', views.faq ),
 
-
+    path('Guide/', views.guide ,name='Guide'),
     path('Login/Home/Logout', views.home, name="Home"),
     path('Login/', views.Login ,name='Login'),
     path('Login/upload', views.bond ,name='upload'),
