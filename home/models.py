@@ -14,6 +14,7 @@ class profile(models.Model):
     plantype=models.CharField(max_length=100)
     mode=models.CharField(max_length=100)
     nshare=models.IntegerField()
+    maturitystatement=models.CharField(max_length=100,default="Maturity will end the policy risk benefits.")
 
     polnum=models.IntegerField()
     polterm=models.IntegerField()
